@@ -48,8 +48,11 @@
 Comparar:
 
 [Me diz a diferença de vinho suave e seco.](https://openrouter.ai/chat?models=anthropic/claude-opus-4.7,deepseek/deepseek-v4-pro)
+
 [Exemplo Multimodal](https://github.com/estrazulas/test_ai_chrome_integrado_gemini.git)
+
 /home/estrazulas/Documents/POSIA/github_clone/engenharia-de-software-com-ia-aplicada/modulo01-fundamentos-de-ia-e-llms-para-programadores/exemplo-05-webai03-multimodal
+
 rodar
 
 **Roteiro**:
@@ -72,28 +75,51 @@ rodar
 **Roteiro**:
 
 - **Alucinações (8 min)**: Contar caso real — pedir artigos de um autor, a IA criar títulos que não existem. "A IA não sabe que não sabe. Ela sempre responde com confiança."
-- **Data de corte (5 min)**: "Perguntem pra qualquer IA sobre algo lançado em 2025. Ela vai alucinar ou dizer que não sabe — se for honesta."
-- **Sensibilidade ao prompt (5 min)**: Demonstrar AO VIVO: digitar "Explique RAG" vs "Explique RAG pra uma criança de 10 anos". Mostrar a diferença.
-- **Degradação com contexto (5 min)**: "50 requisitos num prompt. A IA prioriza o início, ignora o meio, alucina no final. Solução? Quebrar em partes."
-**🎤 Engajar**: "Qual dessas 4 vocês já encontraram? Levanta a mão."
+prompt -> "Escreva um exemplo de integração entre Spring Boot 6 e a biblioteca Micronaut-data-jdbc-reactive para uma API reativa com PostgreSQL."
 
+**"Ninguém escreve 'não sei' na internet." - caso alucinacao pesquisa do rio de janeiro - desvio**
+
+"a gente a alucina as vezes também, responde com convição que sabe de algo que viu, mas não tem certeza"
+
+"**que tipo de alucinação?**", há 3: factual (inventa fatos → RAG mitiga), raciocínio (lógica errada → Chain of Thought mitiga), fidelidade (contradiz a própria fonte → validação cruzada mitiga). A estratégia certa depende do tipo.
+
+- **exemplo de alucinação do sanduiche (com e sem CoT)**
+"corte o sanduiche no meio" -> resposta sem pensar antes -> "dá um corte na vertical só na casca e, por fim, entrega um pedaço minúsculo e outro gigante"
+
+- com CoT (pensa antes de fazer)**O "Pensamento em Silêncio" do Robô (O que acontece nos bastidores):**
+  1. *"O usuário quer duas fatias iguais para duas pessoas."*
+  2. *"Se eu cortar na diagonal de qualquer jeito ou girar o sanduíche aleatoriamente, os pedaços vão ficar com tamanhos diferentes."*
+  3. *"Para serem iguais, preciso achar o centro exato do quadrado."*
+  4. *"Vou medir o lado superior: tem 10 centímetros. A metade é 5 centímetros."*
+  5. *"Vou posicionar a faca exatamente no ponto de 5 centímetros e fazer uma linha reta vertical até a base."***A Ação Final:** Após processar essa lógica passo a passo, o robô desce a faca perfeitamente no meio. Ele te entrega duas fatias idênticas.
+
+---
 **Transição**: "Agora que conhecemos as limitações, vamos ver como lidar com conhecimento específico — fine-tuning vs RAG."
 
 ---
 
 ### Slide 1.4 — Pré-Treinamento, Fine-Tuning e RAG (20 min)
-**🎯 Objetivo**: Entender que RAG resolve 95% dos casos.
+**🎯 Objetivo**: Entender que RAG
 
-**Gatilho**: "Qual é o primeiro impulso de todo dev quando a IA erra no domínio específico? 'Vou fazer fine-tuning!' E isso quase sempre é a solução ERRADA."
+**Gatilho**: "GPT, Claude e Gemini são formados — fizeram graduação. Eles sabem fazer de tudo de forma genérica, mas não sabem como o SIG funciona, por exemplo."
 
 **Roteiro**:
 
-- Explicar os 3 níveis com a analogia do chef.
-- **Pré-treinamento**: "GPT, Claude e Gemini são chefs formados. Custo: milhões. Só os grandes fazem."
-- **Fine-tuning**: "Especialização cara em sushi. 95% dos casos não precisa. Caro, lento, difícil de manter."
-- **RAG**: "Entregar a receita pro chef na hora. Barato, rápido, fácil de atualizar."
-- **Momento chave**: "Regra dos 95%. Antes de pensar em fine-tuning: 'Eu já tentei RAG?' Se a resposta for não, pare e tente RAG primeiro."
-**🎤 Engajar**: "Alguém já fez ou considerou fine-tuning? Era realmente necessário ou RAG resolveria?"
+- Explicar os 3 níveis com exemplos concretos.
+- **Pré-treinamento**: "GPT, Claude e Gemini são profissionais formados. Custo de treinamento: milhões. Só os grandes fazem."
+- **Fine-tuning (10 min)**: "Agora imagina que você tem 500 repositórios Java do seu banco. Todos seguem o mesmo padrão: `XxxService`, `XxxDTO`, testes com `@DisplayName`, exceptions wrappadas em `BusinessException`. Você pega um modelo open-source como Llama 8B e mostra pra ele centenas de pares 'entrada → saída esperada' nesse padrão. Depois de ver isso 500 vezes, ele aprende. Aí você digita 'cria o endpoint de estorno' e ele gera tudo no padrão do banco — sem você precisar explicar a convenção no prompt."
+  - "O problema? Requer GPU, dados rotulados e retreino sempre que o padrão muda. Pra a maioria dos casos, é canhão demais pra uma formiga."
+- **RAG (5 min)**: "RAG resolve a mesma coisa sem treinar nada. Em vez de fazer o modelo decorar seu sistema, você entrega o contexto pra ele na hora. Barato, rápido e atualiza instantaneamente."
+- **Momento chave**: "Antes de cogitar fine-tuning: 'Eu já tentei RAG?' Se a resposta for não, pare e tente RAG primeiro."
+**🎤 Engajar**: "Alguém aqui já ouviu falar de fine-tuning? Faz sentido usar isso no dia a dia de vocês ou RAG já resolve?"
+
+Caso prefeitura do RIO:
+
+[https://followin.io/en/feed/25840372](https://followin.io/en/feed/25840372)
+
+**O que eles entregaram: **pegaram dois modelos open-source — o Nex N2 Pro (chinês, ~60%) e o Qwen 3.5 (chinês, ~40%) — e fizeram uma média ponderada dos pesos. É tipo pegar dois bolos prontos, misturar no liquidificador e dizer que assou do zero. O resultado até funciona, mas não tem nenhum treinamento original.
+
+**Como descobriram:** a equipe do Nex-AGI (dona de um dos modelos-fonte) fez uma análise de similaridade de pesos. Eles compararam cada parâmetro do Rio 3.5 com os modelos existentes e acharam uma correlação quase perfeita: o modelo "carioca" era matematicamente idêntico a 0,6 × Nex N2 Pro + 0,4 × Qwen 3.5. Nenhum desvio, nenhum treinamento incremental. Só uma mescla linear.
 
 **Transição**: "Agora a pergunta mais importante: quando NÃO usar IA?"
 
@@ -107,7 +133,7 @@ rodar
 **Roteiro**:
 
 - Checklist de tarefas que algoritmos determinísticos fazem melhor.
-- "Regex, parser, função matemática, SQL. Não use IA pra isso. É mais caro, mais lento e introduz não-determinismo onde você não precisa."
+- "Regex, parser, função matemática, SQL. Não use IA pra isso. É mais caro, mais lento e introduz não-determinismo onde você não precisa.""A IA é não-determinística porque escolhe tokens com base em probabilidades, não em regras fixas. A mesma pergunta pode gerar respostas diferentes. Pra uma validação de CPF, você quer a MESMA resposta SEMPRE. Regex te dá isso. IA, não."
 - Resumo do módulo: recapitular os 7 takeaways em 3 minutos.
 **🎤 Engajar**: "Alguém aqui já usou IA pra algo que um script de 5 linhas resolveria? Todos nós já fizemos isso. O importante é reconhecer."
 
