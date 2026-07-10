@@ -266,3 +266,85 @@
 2026-07-09 08:54:19.395 [debug] Connecting to transport...
 2026-07-09 08:54:19.396 [info] Excalidraw MCP server running on stdio
 2026-07-09 08:54:19.427 [info] Listing available tools
+2026-07-09 10:36:30.999 [info] Starting Excalidraw MCP server...
+2026-07-09 10:36:31.000 [debug] Connecting to transport...
+2026-07-09 10:36:31.001 [info] Excalidraw MCP server running on stdio
+2026-07-09 10:36:31.019 [info] Listing available tools
+2026-07-09 11:09:55.175 [info] Handling tool call: query_elements
+2026-07-09 11:10:03.978 [info] Handling tool call: create_element
+2026-07-09 11:10:03.979 [info] Creating element
+2026-07-09 11:10:08.224 [info] Handling tool call: create_element
+2026-07-09 11:10:08.225 [info] Creating element
+2026-07-09 11:10:11.917 [info] Handling tool call: create_element
+2026-07-09 11:10:11.917 [info] Creating element
+2026-07-09 11:10:16.209 [info] Handling tool call: create_element
+2026-07-09 11:10:16.210 [info] Creating element
+2026-07-09 11:10:20.397 [info] Handling tool call: create_element
+2026-07-09 11:10:20.397 [info] Creating element
+2026-07-09 11:10:24.620 [info] Handling tool call: create_element
+2026-07-09 11:10:24.620 [info] Creating element
+2026-07-09 11:10:28.391 [info] Handling tool call: create_element
+2026-07-09 11:10:28.392 [error] Error handling tool call: [
+  {
+    "code": "invalid_type",
+    "expected": "object",
+    "received": "array",
+    "path": [
+      "points",
+      0
+    ],
+    "message": "Expected object, received array"
+  },
+  {
+    "code": "invalid_type",
+    "expected": "object",
+    "received": "array",
+    "path": [
+      "points",
+      1
+    ],
+    "message": "Expected object, received array"
+  }
+]
+2026-07-09 11:10:31.894 [info] Handling tool call: create_element
+2026-07-09 11:10:31.895 [info] Creating element
+2026-07-09 11:10:36.460 [info] Handling tool call: create_element
+2026-07-09 11:10:36.460 [info] Creating element
+2026-07-09 11:10:40.528 [info] Handling tool call: create_element
+2026-07-09 11:10:40.528 [info] Creating element
+2026-07-09 11:10:45.761 [info] Handling tool call: create_element
+2026-07-09 11:10:45.761 [info] Creating element
+2026-07-09 11:10:49.572 [info] Handling tool call: create_element
+2026-07-09 11:10:49.573 [info] Creating element
+2026-07-09 11:10:53.328 [info] Handling tool call: create_element
+2026-07-09 11:10:53.328 [info] Creating element
+2026-07-09 11:10:56.794 [info] Handling tool call: create_element
+2026-07-09 11:10:56.794 [info] Creating element
+2026-07-09 11:11:02.184 [info] Handling tool call: create_element
+2026-07-09 11:11:02.184 [info] Creating element
+2026-07-09 11:11:06.312 [info] Handling tool call: create_element
+2026-07-09 11:11:06.313 [info] Creating element
+2026-07-09 11:11:10.899 [info] Handling tool call: create_element
+2026-07-09 11:11:10.900 [info] Creating element
+2026-07-09 11:11:14.997 [info] Handling tool call: create_element
+2026-07-09 11:11:14.997 [info] Creating element
+2026-07-09 11:11:19.152 [info] Handling tool call: create_element
+2026-07-09 11:11:19.152 [info] Creating element
+2026-07-09 11:11:23.339 [info] Handling tool call: create_element
+2026-07-09 11:11:23.339 [info] Creating element
+2026-07-09 11:11:27.258 [info] Handling tool call: create_element
+2026-07-09 11:11:27.259 [info] Creating element
+2026-07-09 11:11:30.749 [info] Handling tool call: create_element
+2026-07-09 11:11:30.749 [info] Creating element
+2026-07-09 11:11:35.887 [info] Handling tool call: create_element
+2026-07-09 11:11:35.888 [info] Creating element
+2026-07-09 11:11:40.170 [info] Handling tool call: create_element
+2026-07-09 11:11:40.170 [info] Creating element
+2026-07-09 11:11:43.797 [info] Handling tool call: create_element
+2026-07-09 11:11:43.797 [info] Creating element
+2026-07-09 11:11:49.357 [info] Handling tool call: create_element
+2026-07-09 11:11:49.357 [info] Creating element
+2026-07-09 11:11:55.919 [info] Handling tool call: create_element
+2026-07-09 11:11:55.919 [info] Creating element
+2026-07-09 11:13:01.690 [info] Handling tool call: get_resource
+2026-07-09 11:13:01.690 [info] Getting resource
