@@ -157,6 +157,8 @@ Caso prefeitura do RIO:
 ### Slide 2.1 — Open-Source vs Proprietários (20 min)
 **🎯 Objetivo**: Entender o trade-off soberania vs conveniência.
 
+(Ollama local desktop vs vLLM (orquestrador)
+
 **Gatilho**: "Quem aqui gosta de cozinhar em casa? Quem prefere pedir delivery? É a diferença entre open-source e proprietário."
 
 **Roteiro**:
@@ -178,7 +180,7 @@ Caso prefeitura do RIO:
 
 - **DEMO AO VIVO (15 min)**: Instalar Ollama (se já não estiver), rodar `ollama run llama3.2`, fazer um prompt simples. Mostrar que funciona offline.
 - "Em 5 minutos você roda um modelo localmente, sem API key, sem internet."
-- Hugging Face: "Antes de pensar em treinar qualquer coisa, procure aqui. Alguém já fez."
+- Hugging Face: "Antes de pensar em treinar qualquer coisa, procure aqui. Alguém já fez."DEMO HUGGING FACE - Identificar raça de pets
 - Abrir huggingface.co e navegar pelos modelos mais populares.
 **🎤 Engajar**: "Alguém aqui já usou Ollama ou Hugging Face? Que modelo?"
 
@@ -193,9 +195,36 @@ Caso prefeitura do RIO:
 
 **Roteiro**:
 
-- Comparar LLMs grandes (GPT-4o, Claude Opus) com SLMs (Phi-3, Llama 8B).
+- Parâmetros: Arquivo de números▎ O arquivo do Llama 8B tem 4.7 GB. Esses 4.7 GB são só números — nada de código, nada de regras. Cada número é um parâmetro. Durante o treinamento, o modelo leu a internet inteira e foi ajustando esses números para refletir padrões da língua. Seu nome, verbos, código Python — tudo virou número.
+Corpo do arquivo — só números:
+
+[Camada 1 - Atenção]
+
+-0.00342 0.01561 -0.00893 0.02147 -0.00112 0.00985 -0.00456 ...
+
+0.01823 -0.00671 0.01134 -0.01988 0.00291 -0.01453 0.00762 ...
+
+0.00559 -0.01245 -0.00178 0.01604 -0.00924 0.01337 -0.00618 ...
+
+... (4096 × 4096 = 16 milhões de números só nesta camada)
+
+[Camada 2 - Atenção]
+
+... (mais 16 milhões de números)
+
+... (32 camadas × milhões de números cada = 8 bilhões de parâmetros)
+
+[Camada 32 - Saída]
+
+-0.00192 0.00814 -0.00366 0.01123 -0.00687 0.00241 -0.00509 ...
+
+Não tem if, for, regra gramatical, nada. É só isso: um dump binário de 8 bilhões de floats comprimidos. Quando você faz uma pergunta, o llama.cpp percorre esses números fazendo multiplicações de matriz — como o NumPy faria.
+
+A "mágica" é que esses números não foram escritos por um humano. Foram descobertos automaticamente pelo treinamento, que leu a internet inteira e ajustou cada número para minimizar o erro de previsão da próxima palavra.
+
+- Comparar LLMs grandes (GPT-4o, Claude Opus) com SLM = Small Language Model.Ex: Phi-3 (Microsoft), Llama 8B (Meta). '8B' = 8 bilhões de parâmetros. O GPT-4o tem centenas de bilhões.
 - "SLMs entregam 80% da qualidade por 10% do custo."
-- **Fato surpreendente**: "Pesquisas recentes mostram que REMOVER parâmetros às vezes MELHORA o modelo. É como tirar 'sujeira' do cérebro."
+- **Fato surpreendente**:  Remover parâmetros pode melhorar o modelo -  Técnica de compressão: pegar um modelo treinado e cortar pesos "inúteis"- É um campo de pesquisa (pruning estruturado, distillation, quantização)- Lottery Ticket Hypothesis (Frankle & Carbin, 2019): sub-redes com 10-20% dos pesos originais igualam a precisão da rede completa. [https://arxiv.org/abs/1803.03635](https://arxiv.org/abs/1803.03635)- SparseGPT (Frantar & Alistarh, 2023): removeu 50-60% dos pesos do OPT-175B e LLaMA em um único passo, sem re-treino. [https://arxiv.org/abs/2301.00774](https://arxiv.org/abs/2301.00774)- Wanda (Sun et al., 2024): poda simples por magnitude × ativação no LLaMA e LLaMA-2, mesma eficácia do SparseGPT. [https://arxiv.org/abs/2306.11695](https://arxiv.org/abs/2306.11695)
 **Transição**: "Então como decidir entre nuvem e local? Vamos à matriz de decisão."
 
 ---
