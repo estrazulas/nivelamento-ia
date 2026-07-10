@@ -224,7 +224,7 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 
 - Comparar LLMs grandes (GPT-4o, Claude Opus) com SLM = Small Language Model.Ex: Phi-3 (Microsoft), Llama 8B (Meta). '8B' = 8 bilhões de parâmetros. O GPT-4o tem centenas de bilhões.
 - "SLMs entregam 80% da qualidade por 10% do custo."
-- **Fato surpreendente**:  Remover parâmetros pode melhorar o modelo -  Técnica de compressão: pegar um modelo treinado e cortar pesos "inúteis"- É um campo de pesquisa (pruning estruturado, distillation, quantização)- Lottery Ticket Hypothesis (Frankle & Carbin, 2019): sub-redes com 10-20% dos pesos originais igualam a precisão da rede completa. [https://arxiv.org/abs/1803.03635](https://arxiv.org/abs/1803.03635)- SparseGPT (Frantar & Alistarh, 2023): removeu 50-60% dos pesos do OPT-175B e LLaMA em um único passo, sem re-treino. [https://arxiv.org/abs/2301.00774](https://arxiv.org/abs/2301.00774)- Wanda (Sun et al., 2024): poda simples por magnitude × ativação no LLaMA e LLaMA-2, mesma eficácia do SparseGPT. [https://arxiv.org/abs/2306.11695](https://arxiv.org/abs/2306.11695)
+- **Fato surpreendente**: Remover parâmetros pode melhorar o modelo - Técnica de compressão: pegar um modelo treinado e cortar pesos "inúteis"- É um campo de pesquisa (pruning estruturado, distillation, quantização)- Lottery Ticket Hypothesis (Frankle & Carbin, 2019): sub-redes com 10-20% dos pesos originais igualam a precisão da rede completa. [https://arxiv.org/abs/1803.03635](https://arxiv.org/abs/1803.03635)- SparseGPT (Frantar & Alistarh, 2023): removeu 50-60% dos pesos do OPT-175B e LLaMA em um único passo, sem re-treino. [https://arxiv.org/abs/2301.00774](https://arxiv.org/abs/2301.00774)- Wanda (Sun et al., 2024): poda simples por magnitude × ativação no LLaMA e LLaMA-2, mesma eficácia do SparseGPT. [https://arxiv.org/abs/2306.11695](https://arxiv.org/abs/2306.11695)
 **Transição**: "Então como decidir entre nuvem e local? Vamos à matriz de decisão."
 
 ---
@@ -277,11 +277,11 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 
 **Roteiro**:
 
-- **RTF**: "Três linhas. Post-it. Pra tarefas simples: gera Dockerfile, cria JSON schema."
-- **CARE**: "E-mail formal. Quando tem objetivo de negócio: runbook, plano de migração."
-- **RISE**: "Documentação técnica. Múltiplos passos: análise de vulnerabilidade, troubleshooting."
+- **RTF**: "Pedir pizza. Três frases, direto ao ponto. Pra tarefas simples: gera endpoint, cria classe Java."Role, Task, Format
+- **CARE**:  "Pedir pizza com visita em casa. Precisa de contexto: quantos? restrições? orçamento? Pra tarefas com objetivo de negócio: runbook, plano de migração."Context, Action, Result, Example
+- **RISE**:  "Ensinar o pizzaiolo. Passo a passo com resultado esperado. Pra tarefas complexas: diagnóstico de bug, troubleshooting."Role, Input, Steps, Examples
 - **Regra**: "Comece com RTF. Se a resposta não for boa, suba pra CARE. Se ainda não for, vá de RISE."
-**🎤 Engajar**: "Que tipo de tarefa você mais faz? Qual framework combina mais?"
+**🎤 Engajar**: "Que tipo de tarefa você mais faz? Qual estão usando no dia a dia com a IA?"
 
 **Transição**: "Frameworks estruturam o prompt. Agora, como o modelo raciocina?"
 
