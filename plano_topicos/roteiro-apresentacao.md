@@ -342,7 +342,7 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 ### Slide 4.1 — RAG: O Conceito (20 min)
 **🎯 Objetivo**: Entender o valor do RAG.
 
-**Gatilho**: "Lembram da regra dos 95% do Módulo 1? Agora vamos ver COMO o RAG funciona."
+**Gatilho**: "Agora vamos ver COMO o RAG funciona."
 
 **Roteiro**:
 
@@ -379,14 +379,14 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 **Roteiro**:
 
 - Explicar que cada palavra/texto vira uma lista de números.
-- **Visualização**: Desenhar mentalmente o mapa 2D — "rei" e "rainha" próximos, "cachorro" e "gato" próximos.
-- **Aplicações**: Busca semântica, recomendação, detecção de duplicatas.
+- **Visualização**: CEP e Busca dentro de documentos.
+- **Aplicações**: Busca semântica, recomendação.
 **Transição**: "RAG tradicional funciona bem pra buscas simples. Mas e quando a pergunta exige conexões?"
 
 ---
 
 ### Slide 4.4 — Graph RAG vs RAG Tradicional (10 min)
-**🎯 Objetivo**: Saber quando Graph RAG é necessário.
+**🎯 Objetivo**: Saber quando Graph RAG(ferramentas rag avançado) é necessário.
 
 **Roteiro**:
 
@@ -398,22 +398,17 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 
 ---
 
-### Slide 4.5 — Engenharia de Contexto + Regra dos 40% (10 min)
-**🎯 Objetivo**: Fixar o princípio mais importante.
+### Slide 4.5 — Engenharia de Contexto + Regra dos 50-70% (10 min)
+**🎯 Objetivo**: Fixar o princípio mais importante de RAG.
 
 **Roteiro**:
 
 - "Contexto é o MAIOR diferencial no uso de IA. Mais que o modelo. Mais que o prompt."
-- **Regra dos 40%**: "Use no máximo 40% da janela. 200K tokens? Fique abaixo de 80K."
-- **Progressive Disclosure**: "Carregue só o necessário, só quando necessário."
-**Transição**: "Laboratório — vocês vão simular um pipeline RAG."
-
----
-
-### Laboratório Módulo 4 (30 min)
-- Notebook: gerar embeddings de 20 palavras, PCA, plotar em 2D.
-- Simular pipeline RAG simplificado: chunk → embedding → busca → injeção.
-- Comparar resposta com vs sem RAG.
+- **Regra dos 50-70%**: "Use no máximo 50-70% da janela. 200K tokens? Fique abaixo de 130K."
+- **Progressive Disclosure**: "Carregue só o necessário, só quando necessário."**Laboratório (30 min):**
+  1. Visualizar embeddings: identificar proximidade e estado pelo CEP.
+  2. Explicar pipeline RAG simplificado: quebrar documento, gerar embeddings, buscar trecho similar a uma pergunta, injetar no prompt e comparar resposta com vs sem RAG.
+**Transição**: "Agora vamos começar a falar de ferramentas para dar contexto."
 
 ---
 

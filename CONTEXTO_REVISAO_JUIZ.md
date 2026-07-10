@@ -9,73 +9,79 @@ Arquivos principais:
 - `plano_topicos/roteiro-revisao-juiz.md` — relatório com 83 intervenções e parecer do juiz
 
 ### Onde paramos
-Intervenção #33 (de 83). Já passamos #1 a #32 com ações tomadas.
+Intervenção #40 (de 83). Já passamos #1 a #39 com ações discutidas.
 
 ### Status das intervenções já discutidas
 
-**Resolvidas (já apliquei a correção no roteiro):**
+**Resolvidas (já apliquei a correção):**
 - #1: MCP/SDD no slide 1.0 → trocar texto
 - #3: "Token" usado antes de definição → definição-relâmpago
 - #4+#5: Analogia do GPS → removida, substituída por autocomplete turbinado
-- #6: Janela de contexto não definida → analogia nova: token=gasolina, janela=porta-malas
+- #6: Janela de contexto não definida → analogia: token=gasolina, janela=porta-malas
 - #7: Três conceitos em 5 min → pausas explícitas no roteiro
-- #8: Lost in the middle → nota de rodapé para instrutor (Liu et al. 2023)
+- #8: Lost in the middle → nota de rodapé (Liu et al. 2023)
 - #9+#10: Cálculo de tokens + custos → demo ao vivo com OpenRouter
 - #12: "Explique RAG" → troquei exemplo para "Explique SQL injection"
-- #13: Data de corte → uma frase: "modelo congelado como binário compilado"
-- #14: Conexão janela→degradação → ponte explícita na fala da limitação 4
-- #15: Demo de alucinação → discutimos exemplos (Java 25, comida, nome da plateia)
-- Slide 1.4 reescrito: analogia da graduação, exemplo concreto Java 500 repositórios, caso Rio 3.5
-- #22: Não-determinismo → adicionada explicação de 1 frase
+- #13: Data de corte → "modelo congelado como binário compilado"
+- #14: Conexão janela→degradação → ponte explícita na limitação 4
+- #15: Demo de alucinação → exemplos Java 25, comida, nome da plateia
+- Slide 1.4 reescrito: analogia da graduação, Java 500 repositórios, caso Rio 3.5
+- #22: Não-determinismo → 1 frase de explicação
 - #11: Multimodalidade → demo ao vivo de wireframe (encaminhado)
-- #23: Ollama omite limitações → nota de rodapé no slide 2.2 + diagrama auxiliar (vllm-vs-llamacpp.excalidraw)
-- #24: Sopa de letrinhas (SLM, Phi-3, Llama 8B) → acrônimos expandidos na fala
-- #25: Parâmetros definidos vagamente → nova definição: "arquivo de números, igual receita de bolo"
-- #26: Remover parâmetros melhora sem contexto → nota com 3 papers (Lottery Ticket, SparseGPT, Wanda)
-- #27: Slide 3.1 sem template → card com template copiável [ROLE][CONTEXTO][INSTRUÇÃO][RESTRIÇÕES][FORMATO]
-- #28: Slide 3.2 frameworks sem prompt real → prompts Java reais (RTF=endpoint REST, CARE=otimizar consulta, RISE=diagnóstico consolidação notas)
-- #29: Zero-shot, Few-shot, CoT não desempacotados → etimologia na fala: "zero exemplos, poucos exemplos, cadeia de raciocínio"
-- #30: Demo de CoT sem exemplo no slide → acatado, slide terá exemplo com/sem CoT
-- #31: Cheat sheet não integra frameworks com técnicas → acatado, segunda camada na árvore
-- #32: RISE+CoT complexo demais → acatado, cenário pré-mordido no laboratório
+- #23: Ollama limitações → nota de rodapé slide 2.2 + diagrama vllm-vs-llamacpp
+- #24: Sopa de letrinhas → acrônimos expandidos (SLM, Phi-3, Llama 8B)
+- #25: Parâmetros vagos → "arquivo de números", exemplo receita de bolo
+- #26: Remover parâmetros → nota com 3 papers (Lottery Ticket, SparseGPT, Wanda)
+- #27: Slide 3.1 sem template → card [ROLE][CONTEXTO][INSTRUÇÃO][RESTRIÇÕES][FORMATO]
+- #28: Slide 3.2 sem prompt real → prompts Java (RTF=endpoint, CARE=otimizar consulta, RISE=consolidação notas) + analogias pizza
+- Roteiro Slide 3.2 atualizado: RTF="Pedir pizza. Três frases.", CARE="Pedir pizza com visita.", RISE="Ensinar o pizzaiolo."
+- #29: Zero-shot, Few-shot, CoT → etimologia na fala
+- #30: Demo de CoT sem exemplo → slide terá exemplo com/sem CoT (#34 resolvida junto: "mágica" removida da linha 365)
+- #31: Cheat sheet não integra → segunda camada na árvore de decisão
+- #32: RISE+CoT complexo → cenário pré-mordido no laboratório
+- #33: Pipeline RAG sem código → snippet de 5 linhas adicionado ao slide 4.2
+- #34: Embeddings = "mágica" → removido da linha 365, trocado por "GPS no espaço do significado"
+- #35: Cosseno sem contexto → explicado como "setas apontando mesma direção"
+- #38: Chunking e hybrid search → nota de rodapé com 3 técnicas
+- #39: PCA nunca explicado → resolvido com os labs (CEP + palavras)
+- #40: 768 desatualizado → explicado (varia por modelo: 384, 512, 768, 1536, 3072)
 
 **Parcialmente resolvidas:**
-- #2: OpenCode como única ferramenta → reconhecido, apêndice de equivalentes pendente
-- #16: Taxonomia de alucinações → nota de rodapé pendente (factual/raciocínio/fidelidade)
-- #17+#18: Embedding/reindexa no M1 → slide tem a palavra "embedding", decisão pendente
+- #2: OpenCode como única ferramenta → apêndice de equivalentes pendente
+- #16: Taxonomia de alucinações → nota de rodapé pendente
+- #17+#18: Embedding/reindexa no M1 → decisão pendente
 
-**Em discussão agora:**
-- #33: Pipeline RAG sem código → slide 4.2 precisa de mini-snippet de 5 linhas
+**Próxima na fila:**
+- #42+#43: Graph RAG em 10 min é avançado demais e omite custo
 
 ### Insumos criados durante a revisão
-- `excalidraw/auxiliares/llamavsvllm/vllm-vs-llamacpp.excalidraw` — diagrama Ollama vs llama.cpp vs vLLM
-- `excalidraw/auxiliares/llamavsvllm/explicacao.md` — explicação completa com OpenCode
-- `excalidraw/auxiliares/llamavsvllm/visao-vs-linguagem.excalidraw` — comparação modelo de visão vs LLM
-- Analogias de pizza para RTF ("pedir pizza"), CARE ("pedir pizza com visita"), RISE ("ensinar o pizzaiolo")
+- `excalidraw/auxiliares/llamavsvllm/` — diagrama Ollama vs llama.cpp vs vLLM + explicação
+- `excalidraw/auxiliares/llamavsvllm/visao-vs-linguagem.excalidraw` — classificador cachorros vs LLM
+- `excalidraw/auxiliares/lab-embeddings-pca.md` — lab completo embeddings+PCA (6→2 dimensões, 12 palavras)
+- `excalidraw/auxiliares/lab-embeddings-pca-cep.md` — lab simplificado PCA (8→2 dígitos, CEPs SC/PR/MG)
+- Analogias de pizza: RTF=pedir pizza, CARE=pedir com visita, RISE=ensinar pizzaiolo
+- Analogias de PCA: CEP (estado), selfie (foto de grupo), ranking de importância
+- PCA em 1 frase: "A máquina que olha N dimensões e te devolve só as que importam"
+- 5 passos macro do PCA: Mede → Ranqueia → Junta redundantes → Descarta lixo → Devolve
 
 ### Formato de cada intervenção
-
 ```
 **#N — Perfil — Slide X.Y: "título do slide"** (Gravidade)
-
-> Citação do trecho problemático do roteiro ou slide.
-
-**Parecer do juiz**: Acolho / Acolho parcialmente / Nota de rodapé.
-
+> Citação do trecho problemático.
+**Parecer do juiz**: Acolho / Parcial / Nota de rodapé.
 **Sugestão**: o que fazer.
 ```
 
 ### Regras da dinâmica
 - Eu (instrutor) pergunto e aplico as correções manualmente
 - Você (Claude) sugere, eu decido
-- Sempre que a intervenção for sobre o roteiro, mostre o trecho atual antes de sugerir
-- Sempre indique qual perfil de agente fez o apontamento (Iniciante/Intermediário/Avançado)
-- Se o Avançado criticar algo que é simplificação didática intencional, sugira nota de rodapé, não mudança de slide
-- Sempre me diga em qual intervenção estamos e quantas faltam
+- Sempre mostre o trecho atual do roteiro antes de sugerir mudança
+- Indique qual perfil de agente (Iniciante/Intermediário/Avançado)
+- Avançado criticando simplificação didática → nota de rodapé, não mudança de slide
+- Sempre diga em qual intervenção estamos e quantas faltam
 
 ### Próximas intervenções na fila
-#34 — Iniciante — Slide 4.2: "Embeddings chamados de mágica"
-#35 — Iniciante — Slide 4.2: "Cosseno sem contexto matemático"
-#38 — Avançado — Slide 4.2: "Estratégias de chunking e hybrid search omitidas"
-#39 — Iniciante — Slide 4.3: "PCA nunca explicado"
+#42+#43 — Intermediário + Avançado — Slide 4.4: "Graph RAG em 10 min é avançado demais + omite custo"
+#44 — Intermediário — Slide 4.5: "Maior diferencial recebe só 10 minutos"
+#45 — Avançado — Slide 4.5: "Regra dos 40% sem suporte empírico"
 ... e seguimos até #83

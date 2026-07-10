@@ -288,8 +288,9 @@ Comparação coletiva: cada um mostra seu melhor prompt e o grupo discute o que 
 
 **Fonte:** [Mini Curso IA para Devs — 23:00](https://youtu.be/90lGnXnMqgo?t=1380)
 
-#### 4.5 Engenharia de Contexto e a Regra dos 40%
-**A ideia:** Contexto é o maior diferencial no uso de IA — mais que o modelo escolhido. Mas tem um limite: a **regra dos 40%** diz pra usar no máximo 40% da janela de contexto. Se o modelo suporta 200 mil tokens, mantenha abaixo de 80 mil. Acima disso, o modelo degrada. **Progressive disclosure** resolve isso: carrega só o necessário, só quando necessário — como um garçom que traz só o prato, não o cardápio inteiro.
+#### 4.5 Engenharia de Contexto e a Regra dos 50/70%
+**A ideia:** Contexto é o maior diferencial no uso de IA — mais que o modelo escolhido. Mas tem um limite: a **regra dos 50-70%** diz pra usar no máximo 70% da janela de contexto. Se o modelo suporta 200 mil tokens, mantenha abaixo de 140 mil. Acima disso, o modelo degrada.   
+**Progressive disclosure** resolve isso: carrega só o necessário, só quando necessário — como um garçom que traz primeiro a entrada, depois o prato principal, depois a sobremesa, não o pedido inteiro.
 
 **Por que isso importa:** É a diferença entre uma IA que acerta e uma que alucina, com os mesmos modelo e pergunta. A qualidade do contexto impacta mais que o modelo ou o prompt.
 
@@ -299,8 +300,8 @@ Comparação coletiva: cada um mostra seu melhor prompt e o grupo discute o que 
 
 **Laboratório (30 min):**
 
-1. Visualizar embeddings: notebook pra gerar embeddings de 20 palavras, reduzir dimensionalidade com PCA e plotar em 2D — observar os agrupamentos.
-2. Simular pipeline RAG simplificado: quebrar documento, gerar embeddings (via API), buscar trecho similar a uma pergunta, injetar no prompt e comparar resposta com vs sem RAG.
+1. Visualizar embeddings: identificar proximidade e estado pelo CEP.
+2. Explicar pipeline RAG simplificado: quebrar documento, gerar embeddings, buscar trecho similar a uma pergunta, injetar no prompt e comparar resposta com vs sem RAG.
 
 ---
 
