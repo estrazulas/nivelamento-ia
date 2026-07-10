@@ -9,7 +9,7 @@ Arquivos principais:
 - `plano_topicos/roteiro-revisao-juiz.md` — relatório com 83 intervenções e parecer do juiz
 
 ### Onde paramos
-Intervenção #23 (de 83). Já passamos #1 a #22 com ações tomadas.
+Intervenção #33 (de 83). Já passamos #1 a #32 com ações tomadas.
 
 ### Status das intervenções já discutidas
 
@@ -28,6 +28,16 @@ Intervenção #23 (de 83). Já passamos #1 a #22 com ações tomadas.
 - Slide 1.4 reescrito: analogia da graduação, exemplo concreto Java 500 repositórios, caso Rio 3.5
 - #22: Não-determinismo → adicionada explicação de 1 frase
 - #11: Multimodalidade → demo ao vivo de wireframe (encaminhado)
+- #23: Ollama omite limitações → nota de rodapé no slide 2.2 + diagrama auxiliar (vllm-vs-llamacpp.excalidraw)
+- #24: Sopa de letrinhas (SLM, Phi-3, Llama 8B) → acrônimos expandidos na fala
+- #25: Parâmetros definidos vagamente → nova definição: "arquivo de números, igual receita de bolo"
+- #26: Remover parâmetros melhora sem contexto → nota com 3 papers (Lottery Ticket, SparseGPT, Wanda)
+- #27: Slide 3.1 sem template → card com template copiável [ROLE][CONTEXTO][INSTRUÇÃO][RESTRIÇÕES][FORMATO]
+- #28: Slide 3.2 frameworks sem prompt real → prompts Java reais (RTF=endpoint REST, CARE=otimizar consulta, RISE=diagnóstico consolidação notas)
+- #29: Zero-shot, Few-shot, CoT não desempacotados → etimologia na fala: "zero exemplos, poucos exemplos, cadeia de raciocínio"
+- #30: Demo de CoT sem exemplo no slide → acatado, slide terá exemplo com/sem CoT
+- #31: Cheat sheet não integra frameworks com técnicas → acatado, segunda camada na árvore
+- #32: RISE+CoT complexo demais → acatado, cenário pré-mordido no laboratório
 
 **Parcialmente resolvidas:**
 - #2: OpenCode como única ferramenta → reconhecido, apêndice de equivalentes pendente
@@ -35,7 +45,13 @@ Intervenção #23 (de 83). Já passamos #1 a #22 com ações tomadas.
 - #17+#18: Embedding/reindexa no M1 → slide tem a palavra "embedding", decisão pendente
 
 **Em discussão agora:**
-- #23: Ollama omite limitações para produção → já expliquei vLLM e llama.cpp, nota de rodapé sugerida para Slide 2.2 (Ollama e Hugging Face, Módulo 2). Slide 2.2 = "Ollama e Hugging Face (25 min)", linha 172 do roteiro.
+- #33: Pipeline RAG sem código → slide 4.2 precisa de mini-snippet de 5 linhas
+
+### Insumos criados durante a revisão
+- `excalidraw/auxiliares/llamavsvllm/vllm-vs-llamacpp.excalidraw` — diagrama Ollama vs llama.cpp vs vLLM
+- `excalidraw/auxiliares/llamavsvllm/explicacao.md` — explicação completa com OpenCode
+- `excalidraw/auxiliares/llamavsvllm/visao-vs-linguagem.excalidraw` — comparação modelo de visão vs LLM
+- Analogias de pizza para RTF ("pedir pizza"), CARE ("pedir pizza com visita"), RISE ("ensinar o pizzaiolo")
 
 ### Formato de cada intervenção
 
@@ -49,20 +65,6 @@ Intervenção #23 (de 83). Já passamos #1 a #22 com ações tomadas.
 **Sugestão**: o que fazer.
 ```
 
-Exemplo de como conduzimos:
-
-```
-#24 — Iniciante — Slide 2.3: "Sopa de letrinhas" (Média)
-
-> "SLMs (Phi-3, Llama 8B) entregam 80% da qualidade por 10% do custo."
-> Três coisas novas de uma vez: SLM, Phi-3, Llama 8B. O que significa cada uma?
-
-Sugestão: expandir acrônimos e notações na fala.
-
-Daí eu (instrutor) pergunto, debato, peço alternativas, e aplico a correção.
-Depois digo "próxima pergunta" e você traz a intervenção seguinte na fila.
-```
-
 ### Regras da dinâmica
 - Eu (instrutor) pergunto e aplico as correções manualmente
 - Você (Claude) sugere, eu decido
@@ -72,7 +74,8 @@ Depois digo "próxima pergunta" e você traz a intervenção seguinte na fila.
 - Sempre me diga em qual intervenção estamos e quantas faltam
 
 ### Próximas intervenções na fila
-#24 — Iniciante — Slide 2.3: "Sopa de letrinhas" (SLM, Phi-3, Llama 8B)
-#25 — Iniciante — Slide 2.3: "Parâmetros definidos vagamente como neurônios"
-#26 — Avançado — Slide 2.3: "Remover parâmetros melhora sem contexto"
+#34 — Iniciante — Slide 4.2: "Embeddings chamados de mágica"
+#35 — Iniciante — Slide 4.2: "Cosseno sem contexto matemático"
+#38 — Avançado — Slide 4.2: "Estratégias de chunking e hybrid search omitidas"
+#39 — Iniciante — Slide 4.3: "PCA nunca explicado"
 ... e seguimos até #83
