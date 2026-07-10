@@ -278,8 +278,8 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 **Roteiro**:
 
 - **RTF**: "Pedir pizza. Três frases, direto ao ponto. Pra tarefas simples: gera endpoint, cria classe Java."Role, Task, Format
-- **CARE**:  "Pedir pizza com visita em casa. Precisa de contexto: quantos? restrições? orçamento? Pra tarefas com objetivo de negócio: runbook, plano de migração."Context, Action, Result, Example
-- **RISE**:  "Ensinar o pizzaiolo. Passo a passo com resultado esperado. Pra tarefas complexas: diagnóstico de bug, troubleshooting."Role, Input, Steps, Examples
+- **CARE**: "Pedir pizza com visita em casa. Precisa de contexto: quantos? restrições? orçamento? Pra tarefas com objetivo de negócio: runbook, plano de migração."Context, Action, Result, Example
+- **RISE**: "Ensinar o pizzaiolo. Passo a passo com resultado esperado. Pra tarefas complexas: diagnóstico de bug, troubleshooting."Role, Input, Steps, Examples
 - **Regra**: "Comece com RTF. Se a resposta não for boa, suba pra CARE. Se ainda não for, vá de RISE."
 **🎤 Engajar**: "Que tipo de tarefa você mais faz? Qual estão usando no dia a dia com a IA?"
 
@@ -361,10 +361,10 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 **Roteiro**:
 
 - Percorrer as 5 etapas. 4 min cada.
-- **Chunks**: "Se muito grande → perde precisão. Se muito pequeno → perde contexto."
+- **Chunks**: "Se muito grande → perde precisão. Se muito pequeno → perde contexto."**Chunking por tamanho (jeito burro):**"Capítulo 1. Introdução à física quântica. Segundo oprincípio da incerteza de Heisenberg, não é possível..." [CORTE em 500 tokens]Corta no meio do raciocínio. Perde o sentido.**Chunking semântico (jeito inteligente):**[CORTE] "Capítulo 1. Introdução à física quântica."[CORTE] "Segundo o princípio da incerteza de Heisenberg, não é possíveldeterminar simultaneamente posição e momento de uma partícula."Corta nos pontos naturais: parágrafos, seções, mudanças de assunto. Preserva o sentido.
 - **Embeddings**: "A 'mágica' que transforma texto em números. Próximo slide aprofunda."
 - **Vector DB**: "Chroma, Pinecone, pgvector — bancos otimizados pra busca por similaridade."
-- **Similaridade**: "Cosseno. Quanto mais próximo no espaço, mais relacionado."
+- **Similaridade**: "Cosseno. Quanto mais próximo no espaço, mais relacionado."Cada embedding é uma seta saindo da origem. Se duas setas apontam na mesma direção (ângulo pequeno), os textos são similares. Cosseno do ângulo mede isso: cos(0°)=1 (idêntico), cos(90°)=0 (não relacionado)Tipos de busca por similaridade (pode ser hybrida):Pessoa 1 — BM25 (Ctrl+F turbinado)Você: "Ache o documento que fala sobre cachorro"Ela vasculha e acha tudo que tem a palavra exata "cachorro":✅ "O cachorro latiu."✅ "Comprei ração para cachorro."❌ "O golden retriever é dócil." ← não achou, não tem a palavra "cachorro"---Pessoa 2 — Embeddings (entende o significado)Você: "Ache o documento que fala sobre cachorro"Ela entende o conceito e acha:✅ "O golden retriever é dócil." ← entendeu que golden = cachorro✅ "Meu animal de estimação toma banho toda semana." ← entendeu o contexto❌ "Cachorro-quente é minha comida favorita." ← confundiu, é comida, não animal
 - **Injeção**: "Os 3-5 chunks viram contexto no prompt. O modelo NÃO usa a memória — usa o contexto."
 - Seção de debugging: "Resposta ruim? Confira os 4 pontos."
 **Transição**: "Embeddings merecem um slide próprio. É o conceito mais abstrato e mais importante."
@@ -378,10 +378,9 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 
 **Roteiro**:
 
-- Explicar que cada palavra/texto vira uma lista de 768+ números.
+- Explicar que cada palavra/texto vira uma lista de números.
 - **Visualização**: Desenhar mentalmente o mapa 2D — "rei" e "rainha" próximos, "cachorro" e "gato" próximos.
 - **Aplicações**: Busca semântica, recomendação, detecção de duplicatas.
-- **Laboratório**: "Depois vocês vão gerar embeddings e plotar em 2D com PCA. É revelador."
 **Transição**: "RAG tradicional funciona bem pra buscas simples. Mas e quando a pergunta exige conexões?"
 
 ---

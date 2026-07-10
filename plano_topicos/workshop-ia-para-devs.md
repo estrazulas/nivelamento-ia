@@ -94,7 +94,7 @@ O problema? Requer GPU, dados rotulados de qualidade e retreino sempre que o pad
 
 RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu conhecimento especifico, você entrega padroes pra ele na hora que for usar. É mais barato, mais rápido e atualiza instantaneamente.
 
-**Por que isso importa:** Saber que fine-tuning existe é importante — mas saber que RAG resolve  a maioria dos casos sem GPU, sem retreino e sem dor de cabeça é mais importante ainda. Antes de cogitar fine-tuning: "Eu já tentei RAG?"
+**Por que isso importa:** Saber que fine-tuning existe é importante — mas saber que RAG resolve a maioria dos casos sem GPU, sem retreino e sem dor de cabeça é mais importante ainda. Antes de cogitar fine-tuning: "Eu já tentei RAG?"
 
 **Pra visualizar:** Pré-treinamento = profissional formado. Fine-tuning = você pagar pra ele decorar seu seu sistema inteiro. RAG = entregar a doc pra ele na hora que precisar.
 
@@ -262,7 +262,7 @@ Comparação coletiva: cada um mostra seu melhor prompt e o grupo discute o que 
 1. **Chunks:** quebrar documentos grandes em pedaços menores e coerentes. Um manual de 500 páginas vira centenas de blocos de 500-1000 tokens.
 2. **Embeddings:** transformar cada chunk num vetor numérico — uma lista de números que representa a posição daquele texto no espaço semântico.
 3. **Vector Database:** armazenar esses vetores num banco otimizado pra busca por proximidade (Chroma, Pinecone, pgvector).
-4. **Busca por similaridade:** quando o usuário pergunta algo, a pergunta vira embedding também. O banco encontra os 3-5 chunks mais próximos (cosseno).
+4. **Busca por similaridade:** quando o usuário pergunta algo, a pergunta vira embedding também. O banco encontra os 3-5 chunks mais próximos (cosseno)
 5. **Injeção no prompt:** esses chunks viram contexto no prompt junto com a pergunta. O modelo responde baseado nesse contexto, não na memória.
 **Por que isso importa:** Entender o pipeline permite debugar quando o RAG falha. Resposta ruim? Pode ser chunk mal dimensionado, embedding de baixa qualidade, threshold errado ou chunk irrelevante sendo injetado.
 
