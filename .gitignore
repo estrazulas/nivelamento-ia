@@ -1,0 +1,21 @@
+# Logs
+*.log
+excalidraw.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Local config (not checked-in)
+*.local
+*.local.*
