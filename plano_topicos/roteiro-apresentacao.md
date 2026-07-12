@@ -473,7 +473,8 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 - "O loop roda até o objetivo ser atingido OU um guardrail interromper."
 - "O que pode dar errado": loop infinito → max_iterations, custo explosivo → budget cap, task drift → checkpoint a cada N iterações.
 - "Entender esse ciclo permite antecipar onde o agente pode travar e adicionar fallbacks."
-- Frameworks para criar - LangGraph: framework pra construir agentes — grafos de estado com nós, arestas e transições condicionais. Você programa o fluxo.- LangSmith: plataforma pra observar agentes — tracing, debugging, avaliação. Você monitora o que o agente fez.**Transição**: "E qual a diferença entre MCP, Skill e API direta?"
+- Frameworks para criar - LangGraph: framework pra construir agentes — grafos de estado com nós, arestas e transições condicionais. Você programa o fluxo.- LangSmith: plataforma pra observar agentes — tracing, debugging, avaliação. Você monitora o que o agente fez.
+- **Transição**: "E qual a diferença entre MCP, Skill e API direta?"
 
 ---
 
@@ -490,8 +491,10 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 ---
 
 ### Laboratório Módulo 5 (30 min)
-- Configurar MCP Server (filesystem ou GitHub) no Claude Code.
-- Observar agente descobrindo ferramentas.
+- Pesquisa sobre springboot
+- Configurar MCP Server (Context7) no Open Code.
+- Observar agente descobrindo ferramentas .
+- Ver inspect das ferramentas
 - Discutir: "O que aconteceu que você não fez manualmente?"
 
 ---
@@ -508,9 +511,9 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 
 - "Essa é a história de como a indústria aprendeu a usar IA de forma eficiente."
 - **Fase 1 (2023-2024)**: "Tudo no prompt. Resultado: contexto gigante, caro, alucinações."
-- **Fase 2 (início 2025)**: "Super-agentes de 3000 linhas. Plano básico do Claude dizia 'oi' e já gastava o limite."
-- **Fase 3 (meados 2025+)**: "Skills modulares. Contexto limpo. Custo baixo. O ponto ideal."
-- **Mensagem**: "Vocês podem pular direto pra Fase 3. Não repitam nossos erros."
+- **Fase 2 (início 2025)**: "AGENTS.MD Inflados. Plano básico do Claude dizia 'oi' e já gastava o limite."
+- **Fase 3 (meados 2025+)**: "Skills modulares / SDD. Contexto limpo. Custo baixo. O ponto ideal."
+- **Mensagem**: "Vocês podem pular direto pra Fase 3."
 **Transição**: "A Fase 3 se organiza em 4 pilares."
 
 ---
@@ -531,7 +534,7 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 ---
 
 ### Slide 6.3 — Rules e Agents.md (15 min)
-**🎯 Objetivo**: Saber criar um Agents.md eficaz.
+**🎯 Objetivo**: Saber criar um Agents.md eficaz (mostrar em algum projeto).
 
 **Roteiro**:
 
@@ -548,17 +551,17 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 ### Slide 6.4 — Skills: Capacidades Portáteis (15 min)
 **🎯 Objetivo**: Entender o valor de encapsular conhecimento.
 
+Lembram do progressive disclosure? Skills são a implmentação prática disso, agora vamos ver como elas funcionam.
+
 **Roteiro**:
 
-- Mostrar o antes/depois com o exemplo do Jira.
-- "Sem skill: 'Corrige o bug CAN-123 na URL techleads.atlassian.net, cloud digital, board CAN...'."
-- "Com skill: 'Corrige a CAN-123.' Pronto."
+- Gatilho: "Sem skill, o dev gasta 80% do prompt descrevendo ONDE e COMO, e 20% no problema real. Com skill, é o contrário."Antes (Sem Skill) — apontar pro lado esquerdo: "Olha o que acontece toda vez: o dev quer criar uma issue boba no GitLab e precisa explicar qual projeto, qual template, qual token. A IA vasculha todos os projetos, erra o template, pede token que o dev nem sabe onde tá. Frustrante."Depois (Com Skill) — apontar pro lado direito: "Agora com skill: o dev só diz 'cria uma issue pra investigar X'. A skill já sabe que é SIGAA, já tem o MCP do GitLab configurado, já tem o template padronizado do time. O trigger é automático — o agente detecta 'criar issue' e carrega a skill sozinho."
 - "Skills transformam conhecimento tribal em ativos reutilizáveis. Marketplaces internos."
 **Transição**: "O terceiro pilar: sub-agents — e a diferença crucial entre skill e sub-agent."
 
 ---
 
-### Slide 6.5 — Sub-agents: Revolução Silenciosa (10 min)
+### Slide 6.5 — Agents vs Sub-agents Genéricos: Revolução Silenciosa (10 min)
 **🎯 Objetivo**: Não confundir skill com sub-agent.
 
 **Roteiro**:
@@ -566,7 +569,21 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 - "Skill: NÃO reduz contexto — roda no mesmo processo."
 - "Sub-agent: SIM reduz contexto — processo separado, devolve só o output."
 - "Você foca em criar skills. A ferramenta gerencia sub-agents."
-- "Antes eram confundidos. Agora cada um tem seu lugar."
+- "Antes era comum criar um agent com uma função específica. Agora as skills podem ser utilizadas por sub-agentes genéricos para serem executados fora do processo principal, reduzindo o contexto e pegando apenas o resultado."Sub-agente genéricio identifica a skill necessária para o que ele precisa - age e devolve o resultado desejado.
+▎ Sub-agents: comece com genéricos, customize com critério
+
+▎ Regra geral: os agentes genéricos das ferramentas resolvem 80% dos casos.
+
+▎ Customize APENAS quando precisar de:
+
+▎ - **System prompt especializado** (ex: agente que só revisa SQL com regras específicas)
+
+▎ - **Ferramentas restritas** (ex: agente sem acesso a deploy, só leitura)
+
+▎ - **Modelo diferente** (ex: tarefa simples com Haiku em vez de Opus)
+
+**Se você se vê criando um agente de 3000 linhas, pare e quebre em skills menores.**
+
 **Transição**: "Checklist final dos 4 pilares."
 
 ---

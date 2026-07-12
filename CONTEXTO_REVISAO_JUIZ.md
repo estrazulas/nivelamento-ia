@@ -9,7 +9,7 @@ Arquivos principais:
 - `plano_topicos/roteiro-revisao-juiz.md` — relatório com 83 intervenções e parecer do juiz
 
 ### Onde paramos
-Intervenção #53 (de 83). Já passamos #1 a #53 com ações discutidas.
+Intervenção #58 (de 83). Já passamos #1 a #58 com ações discutidas.
 
 ### Status das intervenções já discutidas
 
@@ -57,6 +57,11 @@ Intervenção #53 (de 83). Já passamos #1 a #53 com ações discutidas.
 - #51: Loops infinitos, custo explosivo, task drift → mini-quadro com 3 problemas e mitigacoes (max_etapas, budget cap, checkpoint)
 - #52: "Skill" usado antes de definido → definição-relâmpago no slide 5.5: "Skill = conhecimento estável encapsulado (ex: como criar testes). Detalhes no Módulo 6."
 - #53: Distinção mutável/estável frágil → nota de rodapé (é ponto de partida, não lei; MCP = dados/ações, Skill = conhecimento procedural)
+- #54: Narrativa linear não reflete realidade → nota de rodapé (3 padrões coexistem em 2026, Fase 3 é o destino mas não o único presente) + analogia melhorada: canivete suíço vs caixa de ferramentas
+- #55: Agents.md/CLAUDE.md/.cursorrules sem contexto → explicar que cada ferramenta tem seu nome, mesma ideia: README pra IA. Roteiro atualizado com exemplo GitLab/SIGAA.
+- #56: "Não crie sub-agents" é dogmático → confirmado que é posição do Waldemar no vídeo (33:00). Workshop reproduz fielmente. Avançado discorda do autor, não do workshop.
+- #57: Contradiz documentação do Claude Code → nota: .claude/agents/*.md existe, Waldemar desencoraja super-agentes de 3000 linhas, não agentes focados de 100-200 linhas
+- #58: Sobreposição conceitual com M4 e M5 → 3 pontes verbais no roteiro (M4.5→M6, M7.2→M5.4, M6.2→M4)
 
 **Parcialmente resolvidas:**
 - #2: OpenCode como única ferramenta → apêndice de equivalentes pendente
@@ -64,7 +69,7 @@ Intervenção #53 (de 83). Já passamos #1 a #53 com ações discutidas.
 - #17+#18: Embedding/reindexa no M1 → decisão pendente
 
 **Próxima na fila:**
-- #54: Narrativa linear da evolução 2023-2026 não reflete realidade
+- #59: "PRD" mencionado sem definição no slide 7.1
 
 ### Insumos criados durante a revisão
 - `excalidraw/auxiliares/llamavsvllm/` — diagrama Ollama vs llama.cpp vs vLLM + explicação
