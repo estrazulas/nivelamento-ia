@@ -15,10 +15,9 @@
 - [OpenCode](https://opencode.ai) instalado — use a assinatura **FREE** (gratuita) ou o **Plano Básico de US$ 5 no primeiro mês** para ter acesso a mais recursos. O OpenCode será usado como ferramenta principal durante todos os laboratórios do workshop.
 **Ferramentas recomendadas (instalamos juntos durante o workshop):**
 
-- **Ollama** — para execução local de modelos open-source (Módulo 2)
 - **Git e Docker** — para laboratórios de MCP e SDD
 - **Conta no GitHub** — para laboratórios de integração com MCP
-- **Uma IDE com suporte a IA** — Cursor, VS Code + GitHub Copilot, ou Claude Code
+- **Uma IDE com suporte a IA** — VS Code + Terminal com Opencode, GitHub Copilot, ou Claude Code, ou outros.
 **Nivelamento recomendado (não obrigatório):**
 
 - Assistir os 3 vídeos do [Plano de Nivelamento](plano-nivelamento-ia-dev.md) (~1h30 total):
@@ -59,7 +58,7 @@ Dar a devs o que precisam pra usar IA generativa com segurança e produtividade 
 
 **Por que isso importa:** Expande o que você pode delegar — explicar um erro a partir de um screenshot, gerar código de um wireframe, transcrever e analisar uma reunião.
 
-**Pra visualizar:** Um dev que recebia specs só por texto agora recebe fotos do problema, áudios do cliente e vídeos do comportamento.
+**Pra visualizar:** Um dev que recebia specs só por texto agora recebe fotos do problema, áudios do cliente e vídeos do comportamento. Exemplo aplicação web rodando no Google Chrome com gemini-nano multimodal.
 
 **Fonte:** [Mini Curso IA para Devs — 08:00](https://youtu.be/90lGnXnMqgo?t=480)
 
@@ -116,7 +115,7 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 ### Módulo 2 — Ecossistema Open-Source e Execução Local (1h30)
 **O que você vai aprender:**
 
-- Instalar e rodar um modelo open-source localmente via Ollama
+- Conhecer a possibilidade de rodar um modelo open-source localmente via Ollama
 - Navegar no Hugging Face pra encontrar modelos adequados
 - Comparar modelos por custo, latência, privacidade e capacidade
 - Decidir entre execução local vs API na nuvem
@@ -149,10 +148,10 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 
 **Fonte:** [Mini Curso IA para Devs — 17:00](https://youtu.be/90lGnXnMqgo?t=1020)
 
-#### 2.4 Parâmetros: Mais Nem Sempre é Melhor
+#### 2.4 Parâmetros: + Nem Sempre é Melhor
 **A ideia:** Parâmetros são tipo os "neurônios" da rede — quanto mais, maior a capacidade teórica. Mas a correlação não é linear. Pesquisas recentes mostram que remover parâmetros às vezes melhora o modelo (tipo tirar "sujeira" do cérebro). Modelos menores e especializados (Phi-3, Llama 8B) entregam 80% da qualidade de um modelo grande por 10% do custo.
 
-**Por que isso importa:** Nem toda tarefa precisa de GPT-4o. Pra sumarização, classificação, parsing e código simples, um SLM local resolve — com latência menor e custo zero de API.
+**Por que isso importa:** Nem toda tarefa precisa de um modelo caro. Pra sumarização, classificação, parsing e código simples, um SLM local resolve — com latência menor e custo zero de API.
 
 **Pra visualizar:** Você não precisa de um caminhão pra ir na padaria. SLM = moto. LLM gigante = caminhão.
 
@@ -162,8 +161,6 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 **A ideia:** A decisão entre API na nuvem e execução local depende de 4 coisas: **custo** (API cobra por token, local sai de graça depois do setup), **latência** (local é mais rápido pra tarefas simples), **privacidade** (local = dados não saem da máquina) e **capacidade** (nuvem tem modelos maiores pra raciocínio complexo).
 
 **Por que isso importa:** Times que entendem esse trade-off montam arquiteturas híbridas — SLM local pra tarefas de alto volume e baixo risco (autocomplete, linting), API na nuvem pra tarefas complexas e pontuais (design de arquitetura, debugging multi-arquivo).
-
-**Pra visualizar:** Processamento local = cozinha em casa. API na nuvem = pedir delivery.
 
 **Fonte:** [Mini Curso IA para Devs — 17:00](https://youtu.be/90lGnXnMqgo?t=1020)
 
@@ -244,7 +241,7 @@ Comparação coletiva: cada um mostra seu melhor prompt e o grupo discute o que 
 - Explicar cada etapa do pipeline RAG e seu propósito
 - Entender embeddings como representação vetorial de similaridade semântica
 - Diferenciar RAG tradicional de Graph RAG e escolher a abordagem certa
-- Aplicar a regra dos 40% e o princípio de progressive disclosure
+- Aplicar o princípio de progressive disclosure
 **Tópicos:**
 
 #### 4.1 RAG: A Cola na Prova
@@ -271,11 +268,13 @@ Comparação coletiva: cada um mostra seu melhor prompt e o grupo discute o que 
 **Fonte:** [Mini Curso IA para Devs — 23:00](https://youtu.be/90lGnXnMqgo?t=1380)
 
 #### 4.3 Embeddings: Como a IA "Entende" Palavras
-**A ideia:** Embeddings transformam palavras em listas de números — tipo coordenadas GPS no espaço do significado. "Cachorro" e "gato" ficam perto (são pets). "Cachorro" e "carro" ficam longe. Num mapa 2D: "rei" e "rainha" estariam próximos; "homem" e "mulher" também, mas em outra região. Sem embeddings, a IA trataria "automóvel" e "carro" como palavras diferentes.
+**A ideia:** Embeddings transformam palavras em listas de números — tipo coordenadas GPS no espaço do significado. "Cachorro" e "gato" ficam perto (são pets). "Cachorro" e "carro" ficam longe. Num mapa 2D: "rei" e "rainha" estariam próximos; "homem" e "mulher" também, mas em outra região. 
 
-**Por que isso importa:** Embeddings são a base invisível de quase toda aplicação prática de IA — busca semântica em código, recomendação de docs, detecção de duplicatas.
+Sem embeddings, a IA trataria "automóvel" e "carro" como palavras diferentes.
 
-**Pra visualizar:** Coordenadas GPS do significado.
+**Por que isso importa:** Embeddings são a base invisível de quase toda aplicação prática de IA — busca semântica em código, recomendação de docs.
+
+**Pra visualizar:** Exemplo de busca com CEP para identificar qual estado ele pertence em uma base de dados.
 
 **Fonte:** [Mini Curso IA para Devs — 32:00](https://youtu.be/90lGnXnMqgo?t=1920)
 
@@ -340,7 +339,7 @@ O fluxo: a IA decide "preciso buscar a task CAN-123" → o Client vê que o serv
 
 **Fonte:** [Mini Curso IA para Devs — 34:00](https://youtu.be/90lGnXnMqgo?t=2040) | [Rules, Skills, MCPs and Subagents — 24:00](https://youtu.be/omkEi4GTCj8?t=1440)
 
-#### 5.3 Agentes de IA: Além do Chat
+#### 5.3 Agentes automatizados: Além do Chat
 **A ideia:** A diferença entre chat e agente: no chat você pergunta "qual a previsão do tempo?", a IA responde. Um agente recebe "me avisa se chover amanhã e remarca minhas reuniões externas" — ele planeja, executa (consulta previsão → verifica agenda → identifica reuniões → remarca → notifica) e verifica se atingiu o resultado.
 
 Um agente tem 4 componentes:
@@ -391,8 +390,8 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 - Desenhar a arquitetura de contexto de um projeto com os 4 pilares
 - Escrever um Agents.md eficaz (máximo 200 linhas)
-- Criar uma skill com front matter e triggers claros
-- Explicar por que agentes customizados enormes são um antipadrão
+- Criar uma skill com** front matter** e **triggers claros**
+- Explicar por que **agentes customizados enormes são um antipadrão**
 **Tópicos:**
 
 #### 6.1 A Evolução 2023-2026: De Tudo no Prompt às Skills Modulares
@@ -400,10 +399,10 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 1. **2023-2024 — "Tudo no prompt":** documentação, regras, MCPs, workflows num prompt só. Resultado: contexto gigante, tokens caros, alucinações.
 2. **Início de 2025 — Super-agentes:** agentes customizados de 3000+ linhas que faziam tudo. Problema: cada conversa já começava com metade do contexto ocupado.
-3. **Meados de 2025 em diante — Skills modulares:** capacidades pequenas, focadas, carregadas sob demanda.
-**Por que isso importa:** Se você tá começando agora, pode pular pra fase 3 direto. Não crie agentes enormes. Crie skills pequenas e modulares.
+3. **Meados de 2025 em diante — Skills modulares:** capacidades pequenas, focadas, carregadas sob demanda (sub-agents genéricos).
+**Por que isso importa:** Se você tá começando agora, pode pular pra fase 3 direto. Não crie agentes enormes. Crie skills pequenas e modulares e use sug-agents que vão identificar as skills que precisam para trabalhar e dar o resultado ao agente / processo principal.
 
-**Pra visualizar:** Fase 1 = todos os ingredientes na panela de uma vez. Fase 2 = robô gigante que gasta metade da energia só pra ligar. Fase 3 = mise en place — cada ingrediente no seu potinho.
+**Pra visualizar:** Fase 1 = todos os ingredientes na panela de uma vez. Fase 2 = robô gigante que gasta metade da energia só pra ligar. Fase 3 = cada ferramenta na sua gaveta/compartimento, utiliza quando precisar.
 
 **Fonte:** [Rules, Skills, MCPs and Subagents — 14:00](https://youtu.be/omkEi4GTCj8?t=840)
 
@@ -412,7 +411,7 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 1. **Rules / Agents.md = Planta baixa:** o QUE é o projeto — estrutura, convenções, arquitetura.
 2. **Skills = Cômodos funcionais:** COMO fazer X — capacidades reutilizáveis e independentes.
-3. **MCPs = Portas pro mundo externo:** ONDE buscar/alterar dados — Jira, GitHub, bancos.
+3. **MCPs = Portas pro mundo externo:** ONDE buscar/alterar dados — Jira, GitHub, Context7, bancos.
 4. **Sub-agents = Trabalhadores isolados:** FAÇA isso em paralelo sem poluir meu contexto.
 **Por que isso importa:** Essa divisão resolve a confusão mais comum: "isso vai como rule, skill ou MCP?"
 
@@ -442,12 +441,12 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 - **Trigger automático:** o agente detecta que você mencionou uma task do Jira e carrega a skill.
 **Por que isso importa:** Skills transformam conhecimento tribal em ativos reutilizáveis. Em vez de cada dev reinventar a roda, o time compartilha skills. Empresas têm criado "marketplaces internos de skills".
 
-**Pra visualizar:** Skill = classe. MCP = API REST. Sem a classe: você escreve headers, tokens e query params toda vez. Com a classe: `jiraClient.getTask("CAN-123")`.
+**Pra visualizar:** Skill = classe. MCP = API REST.
 
 **Fonte:** [Rules, Skills, MCPs and Subagents — 21:00](https://youtu.be/omkEi4GTCj8?t=1260)
 
 #### 6.5 Sub-agents Genéricos: A Revolução Silenciosa
-**A ideia:** A novidade de 2025: você NÃO precisa mais criar sub-agents customizados. Ferramentas modernas (Cursor, Claude Code) têm agentes genéricos que:
+**A ideia:** A novidade de 2025: você precisa mais criar sub-agents customizados para tudo. Ferramentas modernas (Cursor, Claude Code) têm agentes genéricos que:
 
 - Detectam automaticamente quando paralelizar.
 - Iniciam processos isolados com contexto limpo.

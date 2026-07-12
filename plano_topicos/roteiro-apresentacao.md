@@ -578,8 +578,6 @@ Lembram do progressive disclosure? Skills são a implmentação prática disso, 
 
 ▎ - **System prompt especializado** (ex: agente que só revisa SQL com regras específicas)
 
-▎ - **Ferramentas restritas** (ex: agente sem acesso a deploy, só leitura)
-
 ▎ - **Modelo diferente** (ex: tarefa simples com Haiku em vez de Opus)
 
 **Se você se vê criando um agente de 3000 linhas, pare e quebre em skills menores.**
