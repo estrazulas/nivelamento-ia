@@ -390,7 +390,10 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 
 **Roteiro**:
 
-- Rápido — é um tópico avançado.
+**A ideia:** RAG tradicional resolve ~90% dos casos. Para domínios com MUITAS conexões entre entidades, existe Graph RAG — que monta um grafo de conhecimento e navega por ele. Mas o custo é 5-10x maior: exige LLM para extrair entidades e relações de cada chunk, gerando muito mais chamadas de API.
+
+**Por que isso importa:** Saber que existe, mas também saber que provavelmente você não precisa — ainda. Comece com RAG tradicional. Se as perguntas que falham forem do tipo "quantos clientes do plano X também usam o produto Y?", aí sim investigue Graph RAG.
+
 - "RAG tradicional: 'Quanto custa o plano X?' Graph RAG: 'Quantos clientes do plano X também usam o produto Y?'"
 - "Graph RAG monta um grafo. Entidades = nós. Relacionamentos = arestas. Navega com Cypher."
 - "Só use se seu domínio tem MUITAS conexões. Senão, RAG tradicional resolve."
@@ -424,7 +427,7 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 
 **Roteiro**:
 
-- Explicar o problema M×N de integrações.
+- Explicar o problema de integrações (javascript no começo da internet).
 - MCP resolve: "Qualquer ferramenta que segue o padrão conecta em qualquer IA."
 - "Hoje é padrão da indústria. Cursor, Claude Code, Copilot, Cline — todos usam MCP."
 - "Configura 1x, toda IA descobre e usa."
@@ -439,11 +442,11 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 
 - Explicar os 3 componentes: IA, MCP Client, MCP Server.
 - "A IA decide 'preciso buscar a task CAN-123'. O Client vê que o Server do Jira expõe `getTask`. O Server traduz pra API do Jira."
-- Analogia do restaurante: "Server = garçom. Client = maître. IA = cliente."
-- Mencionar que o protocolo gerencia autenticação.
+- Exemplo GLPI: "Server = GLPI. Client = lista_chamados. IA = investiga pra mim o chamado 1234 do sigaa a possivel causa."
+- Mencionar que o protocolo gerencia autenticação (api e user token).
 **🎤 Engajar**: "Quem aqui já configurou um MCP Server? Como foi a experiência?"
 
-**Transição**: "Agora vamos além do chat — os agentes."
+**Transição**: "Agora vamos além do chat — os agentes autônomos."
 
 ---
 
@@ -461,15 +464,16 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 ---
 
 ### Slide 5.4 — O Loop do Agente (15 min)
-**🎯 Objetivo**: Entender o ciclo Planejar-Executar-Observar-Replanejar.
+**🎯 Objetivo**: Entender o ciclo **Planejar-Executar-Observar-Replanejar (mostrar exemplo de monitor-agent).**
 
 **Roteiro**:
 
-- "É o PDCA da qualidade, executado por IA em segundos."
+- "É o P(plan)D(do)C(check)A(act) da qualidade, executado por IA em segundos."
 - Percorrer as 4 fases.
 - "O loop roda até o objetivo ser atingido OU um guardrail interromper."
+- "O que pode dar errado": loop infinito → max_iterations, custo explosivo → budget cap, task drift → checkpoint a cada N iterações.
 - "Entender esse ciclo permite antecipar onde o agente pode travar e adicionar fallbacks."
-**Transição**: "E qual a diferença entre MCP, Skill e API direta?"
+- Frameworks para criar - LangGraph: framework pra construir agentes — grafos de estado com nós, arestas e transições condicionais. Você programa o fluxo.- LangSmith: plataforma pra observar agentes — tracing, debugging, avaliação. Você monitora o que o agente fez.**Transição**: "E qual a diferença entre MCP, Skill e API direta?"
 
 ---
 
@@ -481,7 +485,7 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 - "Dado que MUDA → MCP. Conhecimento ESTÁVEL → Skill. Integração PONTUAL → API."
 - **Erro comum**: "Times misturam e acabam com MCPs pesados ou skills que deveriam ser MCPs."
 - Resumo do módulo em 2 minutos.
-**Transição**: "Laboratório — configurar um MCP Server real."
+**Transição**: "Laboratório — configurar um MCP Server real. (context 7 vs versão springboot version)"
 
 ---
 

@@ -9,7 +9,7 @@ Arquivos principais:
 - `plano_topicos/roteiro-revisao-juiz.md` — relatório com 83 intervenções e parecer do juiz
 
 ### Onde paramos
-Intervenção #40 (de 83). Já passamos #1 a #39 com ações discutidas.
+Intervenção #53 (de 83). Já passamos #1 a #53 com ações discutidas.
 
 ### Status das intervenções já discutidas
 
@@ -45,6 +45,18 @@ Intervenção #40 (de 83). Já passamos #1 a #39 com ações discutidas.
 - #38: Chunking e hybrid search → nota de rodapé com 3 técnicas
 - #39: PCA nunca explicado → resolvido com os labs (CEP + palavras)
 - #40: 768 desatualizado → explicado (varia por modelo: 384, 512, 768, 1536, 3072)
+- #41: Cypher/Neo4j sem explicação → absorvida por #42+#43 (Graph RAG vira teaser, não menciona Cypher/Neo4j)
+- #42+#43: Graph RAG em 10 min é avançado + omite custo → reduzido a teaser de 3 min com menção a custo 5-10x e paper Microsoft GraphRAG
+- #44: Maior diferencial só 10 min → dividido: 5 min regra dos 50-70% + 5 min ponte explícita pro Módulo 6
+- #45: Regra dos 40% sem suporte → nota de rodapé (heurística conservadora, RULER benchmark mostra 50-70%)
+- #46: "Padrão da indústria" ignora fragmentação → matizado: MCP é o mais adotado, mas não universal (OpenAI function calling, Google A2A, Copilot via adaptador)
+- #47: Frameworks de agentes omitidos → mini-quadro LangGraph/CrewAI/AutoGen no slide 5.3
+- #48: Segurança de agentes omitida → novo tópico 5.6 com 4 perigos (prompt injection, excessive agency, tool poisoning, loop infinito) + mitigações + OWASP Top 10
+- #49: Loop sem trace concreto → diagrama loop-agente-monitor.excalidraw com as 4 fases e trace real
+- #50: "PDCA" sem explicação → expandir sigla na fala: Plan-Do-Check-Act
+- #51: Loops infinitos, custo explosivo, task drift → mini-quadro com 3 problemas e mitigacoes (max_etapas, budget cap, checkpoint)
+- #52: "Skill" usado antes de definido → definição-relâmpago no slide 5.5: "Skill = conhecimento estável encapsulado (ex: como criar testes). Detalhes no Módulo 6."
+- #53: Distinção mutável/estável frágil → nota de rodapé (é ponto de partida, não lei; MCP = dados/ações, Skill = conhecimento procedural)
 
 **Parcialmente resolvidas:**
 - #2: OpenCode como única ferramenta → apêndice de equivalentes pendente
@@ -52,7 +64,7 @@ Intervenção #40 (de 83). Já passamos #1 a #39 com ações discutidas.
 - #17+#18: Embedding/reindexa no M1 → decisão pendente
 
 **Próxima na fila:**
-- #42+#43: Graph RAG em 10 min é avançado demais e omite custo
+- #54: Narrativa linear da evolução 2023-2026 não reflete realidade
 
 ### Insumos criados durante a revisão
 - `excalidraw/auxiliares/llamavsvllm/` — diagrama Ollama vs llama.cpp vs vLLM + explicação
