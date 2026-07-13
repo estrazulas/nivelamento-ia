@@ -5,9 +5,9 @@
 
 **Pra quem:** Desenvolvedores com experiência profissional
 
-**Pra começar:** Assistir os 3 vídeos do [Plano de Nivelamento](plano-nivelamento-ia-dev.md) (Fundamentos de LLMs, Prompt Engineering, SDD)
+**Formato:** Teoria + laboratórios práticos (30-50 min por módulo)
 
-**Formato:** Teoria + laboratórios práticos (30-45 min por módulo)
+**Referências: **No final do documento
 
 ### Pré-requisitos
 **Ferramenta obrigatória:**
@@ -51,8 +51,6 @@ Dar a devs o que precisam pra usar IA generativa com segurança e produtividade 
 
 **Pra visualizar:** Autocomplete turbinado — milhões de opções em vez de 3, e ele lembra de tudo na conversa.
 
-**Fonte:** [Mini Curso IA para Devs — 08:00](https://youtu.be/90lGnXnMqgo?t=480)
-
 #### 1.2 Modelos Multimodais
 **A ideia:** Modelos multimodais entendem texto, imagem, áudio e vídeo. Dá pra enviar um print de bug, um diagrama rabiscado ou um áudio com sua dúvida, e o modelo processa tudo junto. GPT-4o, Gemini e Claude fazem isso.
 
@@ -60,16 +58,12 @@ Dar a devs o que precisam pra usar IA generativa com segurança e produtividade 
 
 **Pra visualizar:** Um dev que recebia specs só por texto agora recebe fotos do problema, áudios do cliente e vídeos do comportamento. Exemplo aplicação web rodando no Google Chrome com gemini-nano multimodal.
 
-**Fonte:** [Mini Curso IA para Devs — 08:00](https://youtu.be/90lGnXnMqgo?t=480)
-
 #### 1.3 Tokens: A Moeda da IA
 **A ideia:** Token é a unidade de processamento — cada palavra ou fragmento que o modelo lê ou gera. "Inteligência artificial" pode ser 2 tokens. Toda API cobra por token (input + output). Uma conversa típica de desenvolvimento consome entre 2 mil e 20 mil tokens. Modelos maiores têm janelas maiores (Gemini 1.5 Pro: 2M tokens ≈ 3 livros). Mas tem uma pegadinha: se você lotar a janela, o modelo começa a "esquecer" coisas no meio.
 
 **Por que isso importa:** Token = custo. Quem entende tokenização consegue estimar gastos, otimizar prompts e evitar desperdício com contexto redundante. Também ajuda a não estourar a janela e degradar a qualidade.
 
 **Pra visualizar:** Token é que nem kilowatt — a moeda de consumo. A janela de contexto é a RAM: você pode encher, mas o desempenho piora antes do limite.
-
-**Fonte:** [Mini Curso IA para Devs — 10:00](https://youtu.be/90lGnXnMqgo?t=600)
 
 #### 1.4 As 4 Grandes Limitações
 **A ideia:**
@@ -81,8 +75,6 @@ Dar a devs o que precisam pra usar IA generativa com segurança e produtividade 
 **Por que isso importa:** Conhecer essas limitações separa quem culpa a IA ("não presta") de quem contorna com estratégia ("vou quebrar em partes", "vou validar", "vou usar RAG").
 
 **Pra visualizar:** A IA é tipo um estagiário brilhante mas com amnésia seletiva. Inventa coisas com convicção (alucina), não sabe o que aconteceu depois que foi contratado (corte), responde diferente dependendo de como você pergunta (sensibilidade) e se perde com instruções demais (sobrecarga).
-
-**Fonte:** [Mini Curso IA para Devs — 12:00](https://youtu.be/90lGnXnMqgo?t=720)
 
 #### 1.5 Pré-Treinamento, Fine-Tuning
 **A ideia:** GPT, Claude e Gemini são formados — fizeram graduação. Eles sabem fazer de tudo de forma genérica com conteudo que aprenderam, mas não sabem como o SIG funciona por exemplo.
@@ -97,16 +89,12 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 
 **Pra visualizar:** Pré-treinamento = profissional formado. Fine-tuning = você pagar pra ele decorar seu seu sistema inteiro. RAG = entregar a doc pra ele na hora que precisar.
 
-**Fonte:** [Mini Curso IA para Devs — 15:00](https://youtu.be/90lGnXnMqgo?t=900)
-
 #### 1.6 Quando NÃO Usar uma LLM
 **A ideia:** Nem tudo precisa de IA. Um algoritmo determinístico resolve melhor e mais barato em muitos cenários: validação de formato, parsing, cálculos, ordenação, filtros simples. Saber quando NÃO usar LLM é tão importante quanto saber usar.
 
 **Por que isso importa:** Evita o viés do martelo dourado — usar LLM pra tudo é caro, lento e introduz não-determinismo onde você não precisa.
 
 **Pra visualizar:** Você não chama um arquiteto pra pendurar um quadro. Às vezes um prego e um martelo resolvem.
-
-**Fonte:** [Mini Curso IA para Devs — 00:00](https://youtu.be/90lGnXnMqgo?t=0)
 
 **Laboratório (30 min):** Cada participante recebe 3 prompts com problemas diferentes — alucinação, data de corte, sobrecarga de contexto. A tarefa: diagnosticar qual limitação está rolando em cada caso e reescrever o prompt pra mitigar. Bônus: calcular os tokens de cada versão e comparar o custo.
 
@@ -128,16 +116,12 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 
 **Pra visualizar:** Proprietário = restaurante. Open-source = receita que você cozinha em casa.
 
-**Fonte:** [Mini Curso IA para Devs — 17:00](https://youtu.be/90lGnXnMqgo?t=1020)
-
 #### 2.2 Ollama: O Eletrodoméstico
 **A ideia:** Ollama faz execução local de LLMs ser trivial — parecido com Docker pra modelos de IA. Instala, escolhe o modelo (`ollama run llama3.2`), e roda na sua máquina. Sem depender de internet, sem pagar API, sem enviar dados pra lugar nenhum.
 
 **Por que isso importa:** Elimina a barreira de entrada pra testar modelos open-source. Em 5 minutos você roda um modelo localmente, compara com APIs e decide com dados reais.
 
 **Pra visualizar:** Ollama tá pra LLM assim como Docker tá pra aplicação — baixa e roda com um comando.
-
-**Fonte:** [Mini Curso IA para Devs — 17:00](https://youtu.be/90lGnXnMqgo?t=1020)
 
 #### 2.3 Hugging Face: O GitHub dos Modelos
 **A ideia:** Hugging Face é o maior repositório de modelos de IA — milhares de modelos pré-treinados, datasets e versões modificadas pela comunidade. É onde você encontra modelos especializados (um treinado pra SQL, outro pra revisão de contratos) e benchmarks.
@@ -146,8 +130,6 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 
 **Pra visualizar:** Hugging Face tá pra modelo de IA assim como GitHub tá pra código — repositório público, comunidade ativa, versões, forks.
 
-**Fonte:** [Mini Curso IA para Devs — 17:00](https://youtu.be/90lGnXnMqgo?t=1020)
-
 #### 2.4 Parâmetros: + Nem Sempre é Melhor
 **A ideia:** Parâmetros são tipo os "neurônios" da rede — quanto mais, maior a capacidade teórica. Mas a correlação não é linear. Pesquisas recentes mostram que remover parâmetros às vezes melhora o modelo (tipo tirar "sujeira" do cérebro). Modelos menores e especializados (Phi-3, Llama 8B) entregam 80% da qualidade de um modelo grande por 10% do custo.
 
@@ -155,14 +137,10 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 
 **Pra visualizar:** Você não precisa de um caminhão pra ir na padaria. SLM = moto. LLM gigante = caminhão.
 
-**Fonte:** [Mini Curso IA para Devs — 17:00](https://youtu.be/90lGnXnMqgo?t=1020) | [Roadmap IA para DevOps — 5:55](https://youtu.be/03-nB_KMm44?t=355)
-
 #### 2.5 Critérios de Escolha: Nuvem vs Local
 **A ideia:** A decisão entre API na nuvem e execução local depende de 4 coisas: **custo** (API cobra por token, local sai de graça depois do setup), **latência** (local é mais rápido pra tarefas simples), **privacidade** (local = dados não saem da máquina) e **capacidade** (nuvem tem modelos maiores pra raciocínio complexo).
 
 **Por que isso importa:** Times que entendem esse trade-off montam arquiteturas híbridas — SLM local pra tarefas de alto volume e baixo risco (autocomplete, linting), API na nuvem pra tarefas complexas e pontuais (design de arquitetura, debugging multi-arquivo).
-
-**Fonte:** [Mini Curso IA para Devs — 17:00](https://youtu.be/90lGnXnMqgo?t=1020)
 
 **Laboratório (30 min):** Instalar Ollama, baixar um modelo pequeno (Llama 3.2 3B ou Qwen 2.5 7B), executar 3 prompts idênticos no modelo local e em uma API na nuvem (Claude ou GPT). Comparar qualidade, latência e custo estimado. Preencher uma matriz de decisão.
 
@@ -189,8 +167,6 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 
 **Pra visualizar:** Pedir sem estrutura = "conserta minha casa". Com os 5 elementos = entregar planta baixa, materiais, normas e prazo.
 
-**Fonte:** [Prompt Engineering — 21:28](https://www.youtube.com/live/Qf_QHxuc8J8?t=1288)
-
 #### 3.2 Frameworks de Prompt: RTF, CARE, RISE
 **A ideia:** Nem todo prompt precisa dos 5 elementos. Dá pra usar frameworks mais enxutos:
 
@@ -200,8 +176,6 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 **Por que isso importa:** Economiza tokens e tempo. Você não precisa dos 5 elementos pra gerar um Dockerfile — RTF resolve com 3 linhas.
 
 **Pra visualizar:** RTF = post-it. CARE = e-mail formal. RISE = documentação técnica passo a passo.
-
-**Fonte:** [Prompt Engineering — 47:01](https://www.youtube.com/live/Qf_QHxuc8J8?t=2821)
 
 #### 3.3 Técnicas de Raciocínio
 **A ideia:** Os frameworks estruturam o prompt; as técnicas definem como o modelo raciocina:
@@ -213,8 +187,6 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 
 **Pra visualizar:** Zero-shot = "faz um bolo". Few-shot = "faz um bolo igual a este" (mostra foto). Chain of Thought = "me explica como você vai fazer antes de começar".
 
-**Fonte:** [Prompt Engineering — 70:34](https://www.youtube.com/live/Qf_QHxuc8J8?t=4234)
-
 #### 3.4 Antipadrões e Erros Comuns
 **A ideia:** Os erros mais frequentes:
 
@@ -223,8 +195,6 @@ RAG resolve a mesma coisa sem treinar nada: em vez de fazer o modelo decorar seu
 - **Restrições contraditórias:** "seja conciso" + "explique em detalhes" — o modelo trava.
 - **Confiar cegamente:** não validar saídas, especialmente código e dados estruturados.
 **Por que isso importa:** Conhecer os antipadrões reduz o tempo de iteração. A maioria dos prompts ruins sofre de um desses 4 problemas.
-
-**Fonte:** [Mini Curso IA para Devs — 12:00](https://youtu.be/90lGnXnMqgo?t=720) | [Prompt Engineering — 19:27](https://www.youtube.com/live/Qf_QHxuc8J8?t=1167)
 
 **Laboratório (45 min):** Oficina de prompt engineering. Cada participante recebe 3 cenários reais:
 
@@ -251,8 +221,6 @@ Comparação coletiva: cada um mostra seu melhor prompt e o grupo discute o que 
 
 **Pra visualizar:** Fine-tuning = mandar o aluno estudar o livro inteiro antes da prova. RAG = deixar o livro aberto na página certa.
 
-**Fonte:** [Mini Curso IA para Devs — 23:00](https://youtu.be/90lGnXnMqgo?t=1380)
-
 #### 4.2 O Pipeline RAG em 5 Etapas
 **A ideia:** O pipeline RAG completo:
 
@@ -265,8 +233,6 @@ Comparação coletiva: cada um mostra seu melhor prompt e o grupo discute o que 
 
 **Pra visualizar:** É uma biblioteca. Chunks = fichas. Embeddings = coordenadas da estante. Vector DB = sistema de busca. Similaridade = encontrar livros na mesma estante. Injeção = colocar os livros abertos na mesa do aluno.
 
-**Fonte:** [Mini Curso IA para Devs — 23:00](https://youtu.be/90lGnXnMqgo?t=1380)
-
 #### 4.3 Embeddings: Como a IA "Entende" Palavras
 **A ideia:** Embeddings transformam palavras em listas de números — tipo coordenadas GPS no espaço do significado. "Cachorro" e "gato" ficam perto (são pets). "Cachorro" e "carro" ficam longe. Num mapa 2D: "rei" e "rainha" estariam próximos; "homem" e "mulher" também, mas em outra região.
 
@@ -276,16 +242,12 @@ Sem embeddings, a IA trataria "automóvel" e "carro" como palavras diferentes.
 
 **Pra visualizar:** Exemplo de busca com CEP para identificar qual estado ele pertence em uma base de dados.
 
-**Fonte:** [Mini Curso IA para Devs — 32:00](https://youtu.be/90lGnXnMqgo?t=1920)
-
 #### 4.4 Graph RAG: Quando Similaridade Não Basta
 **A ideia:** RAG tradicional busca por similaridade de texto — funciona pra perguntas factuais ("quanto custa o plano X?"). Mas falha em perguntas que exigem conexões entre entidades ("quantos clientes do plano X também usam o produto Y?"). Graph RAG resolve montando um grafo de conhecimento (entidades como nós, relacionamentos como arestas) e navegando por ele com consultas tipo Cypher (Neo4j).
 
 **Por que isso importa:** Graph RAG é a abordagem certa pra domínios com muitas conexões: catálogos de produtos com dependências, APIs com compatibilidade, bases de conhecimento com cross-references.
 
 **Pra visualizar:** RAG tradicional = buscar "restaurante italiano" no Google. Graph RAG = "restaurantes italianos a menos de 1 km, abertos agora, nota acima de 4.5" — cada condição é uma aresta no grafo.
-
-**Fonte:** [Mini Curso IA para Devs — 23:00](https://youtu.be/90lGnXnMqgo?t=1380)
 
 #### 4.5 Engenharia de Contexto e a Regra dos 50/70%
 **A ideia:** Contexto é o maior diferencial no uso de IA — mais que o modelo escolhido. Mas tem um limite: a **regra dos 50-70%** diz pra usar no máximo 70% da janela de contexto. Se o modelo suporta 200 mil tokens, mantenha abaixo de 140 mil. Acima disso, o modelo degrada.
@@ -296,8 +258,6 @@ Sem embeddings, a IA trataria "automóvel" e "carro" como palavras diferentes.
 
 **Pra visualizar:** Sua mesa de trabalho. 50 documentos = caos. 3 documentos = foco total.
 
-**Fonte:** [Rules, Skills, MCPs and Subagents — 04:00](https://youtu.be/omkEi4GTCj8?t=240)
-
 **Laboratório (30 min):**
 
 1. Visualizar embeddings: identificar proximidade e estado pelo CEP.
@@ -305,7 +265,7 @@ Sem embeddings, a IA trataria "automóvel" e "carro" como palavras diferentes.
 
 ---
 
-## Dia 2 — Arquitetura e Prática (~8h)
+## Dia 2 — Ferramentas de Contexto e Prática (~8h)
 
 ---
 
@@ -325,8 +285,6 @@ Sem embeddings, a IA trataria "automóvel" e "carro" como palavras diferentes.
 
 **Pra visualizar:** Antes do MCP = cada eletrodoméstico com sua tomada. Depois = tomada universal de 3 pinos.
 
-**Fonte:** [Mini Curso IA para Devs — 34:00](https://youtu.be/90lGnXnMqgo?t=2040)
-
 #### 5.2 Arquitetura Server/Client
 **A ideia:** O ecossistema MCP tem dois lados:
 
@@ -337,8 +295,6 @@ O fluxo: a IA decide "preciso buscar a task CAN-123" → o Client vê que o serv
 **Por que isso importa:** Entender a arquitetura permite depurar problemas de integração e decidir quando usar MCP vs API direta.
 
 **Pra visualizar:** MCP Server = garçom. MCP Client = maître que sabe quem tá disponível. IA = cliente.
-
-**Fonte:** [Mini Curso IA para Devs — 34:00](https://youtu.be/90lGnXnMqgo?t=2040) | [Rules, Skills, MCPs and Subagents — 24:00](https://youtu.be/omkEi4GTCj8?t=1440)
 
 #### 5.3 Agentes automatizados: Além do Chat
 **A ideia:** A diferença entre chat e agente: no chat você pergunta "qual a previsão do tempo?", a IA responde. Um agente recebe "me avisa se chover amanhã e remarca minhas reuniões externas" — ele planeja, executa (consulta previsão → verifica agenda → identifica reuniões → remarca → notifica) e verifica se atingiu o resultado.
@@ -353,8 +309,6 @@ Um agente tem 4 componentes:
 
 **Pra visualizar:** Chat = perguntar as horas. Agente = assistente que olha sua agenda, calcula o trânsito, te avisa e já adianta o café.
 
-**Fonte:** [Mini Curso IA para Devs — 36:00](https://youtu.be/90lGnXnMqgo?t=2160)
-
 #### 5.4 O Loop do Agente
 **A ideia:** O ciclo de execução de um agente:
 
@@ -368,8 +322,6 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 **Pra visualizar:** É o PDCA da qualidade, executado por IA em segundos em vez de humanos em semanas.
 
-**Fonte:** [Mini Curso IA para Devs — 36:00](https://youtu.be/90lGnXnMqgo?t=2160)
-
 #### 5.5 MCP vs Skill vs API Direta
 **A ideia:** Qual usar pra cada tipo de integração:
 
@@ -379,8 +331,6 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 **Por que isso importa:** Times que misturam esses conceitos acabam com MCPs pesados ou skills que deveriam ser MCPs. A regra: dado mutável → MCP; conhecimento estável → Skill; integração pontual → API direta.
 
 **Pra visualizar:** MCP = porta giratória pro mundo externo. Skill = manual na gaveta. API direta = construir uma porta nova.
-
-**Fonte:** [Rules, Skills, MCPs and Subagents — 24:00](https://youtu.be/omkEi4GTCj8?t=1440)
 
 **Laboratório (30 min):** Configurar um MCP Server simples (filesystem ou GitHub) no Claude Code. Observar o agente descobrindo ferramentas, usando a ferramenta certa e reportando o resultado. Discutir: o que aconteceu que você não fez manualmente?
 
@@ -405,8 +355,6 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 **Pra visualizar:** Fase 1 = todos os ingredientes na panela de uma vez. Fase 2 = robô gigante que gasta metade da energia só pra ligar. Fase 3 = cada ferramenta na sua gaveta/compartimento, utiliza quando precisar.
 
-**Fonte:** [Rules, Skills, MCPs and Subagents — 14:00](https://youtu.be/omkEi4GTCj8?t=840)
-
 #### 6.2 Os 4 Pilares da Arquitetura de Contexto
 **A ideia:** Pensa na arquitetura de uma casa:
 
@@ -417,8 +365,6 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 **Por que isso importa:** Essa divisão resolve a confusão mais comum: "isso vai como rule, skill ou MCP?"
 
 **Pra visualizar:** Rules = planta baixa. Skills = ferramentas na caixa. MCPs = portas e janelas. Sub-agents = pedreiros em cômodos diferentes.
-
-**Fonte:** [Rules, Skills, MCPs and Subagents — 09:00](https://youtu.be/omkEi4GTCj8?t=540)
 
 #### 6.3 Rules e Agents.md: A Planta Baixa
 **A ideia:** Agents.md (ou CLAUDE.md) é o padrão — um arquivo na raiz do projeto que toda IA lê ao iniciar. Regras:
@@ -431,8 +377,6 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 **Pra visualizar:** Agents.md = README pra humanos, mas otimizado pra IAs.
 
-**Fonte:** [Rules, Skills, MCPs and Subagents — 10:30](https://youtu.be/omkEi4GTCj8?t=630)
-
 #### 6.4 Skills: Capacidades Portáteis
 **A ideia:** Skill é tipo uma classe abstrata — encapsula complexidade e expõe interface simples:
 
@@ -443,8 +387,6 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 **Por que isso importa:** Skills transformam conhecimento tribal em ativos reutilizáveis. Em vez de cada dev reinventar a roda, o time compartilha skills. Empresas têm criado "marketplaces internos de skills".
 
 **Pra visualizar:** Skill = classe. MCP = API REST.
-
-**Fonte:** [Rules, Skills, MCPs and Subagents — 21:00](https://youtu.be/omkEi4GTCj8?t=1260)
 
 #### 6.5 Sub-agents Genéricos: A Revolução Silenciosa
 **A ideia:** A novidade de 2025: você precisa mais criar sub-agents customizados para tudo. Ferramentas modernas (Cursor, Claude Code) têm agentes genéricos que:
@@ -461,8 +403,6 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 **Pra visualizar:** Skill = manual na sua mesa. Sub-agent = assistente que vai pra outra sala e volta só com a resposta.
 
-**Fonte:** [Rules, Skills, MCPs and Subagents — 33:00](https://youtu.be/omkEi4GTCj8?t=1980)
-
 #### 6.6 Da Teoria à Prática: Checklist dos 4 Pilares
 **A ideia:**
 
@@ -477,8 +417,6 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 **Pra visualizar:** Canivete suíço que faz tudo mal vs kit de ferramentas especializadas.
 
-**Fonte:** [Rules, Skills, MCPs and Subagents — 36:00](https://youtu.be/omkEi4GTCj8?t=2160)
-
 **Laboratório (35 min):**
 
 1. Analisar um "super-agente" hipotético de 3000 linhas e identificar o que deveria virar skills independentes.
@@ -487,7 +425,7 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 ---
 
-### Módulo 7 — SDD e Ferramentas na Prática (2h30)
+### Módulo 7 — SDD e Ferramentas na Prática (~3h)
 **O que você vai aprender:**
 
 - Executar o ciclo SDD completo num cenário real
@@ -495,6 +433,8 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 - Quebrar uma spec em tasks autossuficientes com pré-requisitos
 - Comparar ferramentas de IA e selecionar a mais adequada
 - Estabelecer um fluxo de documentação viva mantida por IA
+- Avaliar a qualidade do código gerado por IA — o que olhar, o que a IA erra, como validar
+- Montar um fluxo de validação prático com ferramentas Java
 **Tópicos:**
 
 #### 7.1 Por que Prompt Direto Falha em Projetos Grandes
@@ -503,8 +443,6 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 **Por que isso importa:** Explica por que times que tentam "codar tudo com IA" sem método falham. SDD não é burocracia — é estratégia pra contornar limitações das LLMs.
 
 **Pra visualizar:** Prompt direto com PRD gigante = pedir pra um dev implementar 50 features sem dividir em tasks, sem critério de aceite, sem definição de pronto.
-
-**Fonte:** [SDD para Devs — 0:32](https://youtu.be/YFDp-smGYqQ?t=32)
 
 #### 7.2 SDD: As 4 Fases
 **A ideia:** Spec-Driven Development em 4 fases:
@@ -521,16 +459,12 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 **Pra visualizar:** Construção civil. Specify = "quero 3 quartos". Design = planta. Tasks = cronograma. Execute = pedreiros em paralelo.
 
-**Fonte:** [SDD para Devs — 5:28](https://youtu.be/YFDp-smGYqQ?t=328)
-
 #### 7.3 STATE.md: Memória Entre Sessões
 **A ideia:** STATE.md persiste o estado do desenvolvimento entre sessões. Guarda decisões e por quê, tasks concluídas, pendentes, blockers e aprendizados. Quando você volta (5 minutos ou 5 dias depois), o agente lê o STATE.md e continua de onde parou.
 
 **Por que isso importa:** Resolve o maior problema de desenvolver com IA: a perda de contexto entre sessões. Sem STATE.md, cada nova conversa começa do zero.
 
 **Pra visualizar:** STATE.md = diário de obra. O pedreiro do turno seguinte lê e sabe exatamente o que foi feito.
-
-**Fonte:** [SDD para Devs — 9:54](https://youtu.be/YFDp-smGYqQ?t=594)
 
 #### 7.4 Documentação Como Combustível
 **A ideia:** Na era da IA, documentação deixou de ser burocracia e virou combustível. Quanto melhor documentado seu projeto, mais rápido e preciso o agente trabalha. A dica do Waldemar: a cada feature nova, peça pra IA atualizar as guidelines do projeto. Assim a documentação cresce organicamente.
@@ -539,13 +473,11 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 **Pra visualizar:** Documentação = gasolina do motor de IA. Sem gasolina, o motor rateia. Com gasolina de qualidade, roda liso.
 
-**Fonte:** [Mini Curso IA para Devs — 41:00](https://youtu.be/90lGnXnMqgo?t=2460)
-
 #### 7.5 Frameworks SDD: OpenSpec, TLC Spec-Driven e Kiro
 **A ideia:** Em vez de ferramentas de IA genéricas, existem frameworks especializados em SDD que implementam o ciclo Specify → Design → Tasks → Execute. Cada um com sua filosofia e comandos próprios.
 
 ---
-**🔷 OpenSpec** — *Framework SDD open-source (Fission-AI / MIT)*
+**OpenSpec** — *Framework SDD open-source (Fission-AI / MIT)*
 
 ```plaintext
 Explore:   /opsx:explore "ideia" → pesquisa viabilidade antes de começar
@@ -564,7 +496,7 @@ Install:   npm install -g @fission-ai/openspec && openspec init
 - `/opsx:verify` retorna issues como CRITICAL, WARNING, SUGGESTION — não gera testes, só valida coerência
 
 ---
-**🔷 TLC Spec-Driven** — *Skill adaptativa (Tech Lead's Club)*
+**TLC Spec-Driven** — *Skill adaptativa (Tech Lead's Club)*
 
 ```plaintext
 Setup:     npx skills add ... --skill tlc-spec-driven → .specs/project/ + .specs/codebase/ (7 docs)
@@ -584,7 +516,7 @@ Session:   "record decision" / "log blocker" / "pause work" → STATE.md persist
 - Gatilhos por linguagem natural (não slash commands)
 
 ---
-**🔷 Kiro** — *IDE + CLI com specs integrados (AWS)*
+**Kiro** — *IDE + CLI com specs integrados (AWS)*
 
 ```plaintext
 Steering:  kiro init (CLI) → structure.md + tech.md + product.md (análise automática da base)
@@ -613,8 +545,6 @@ Quick:     /spec new --quick → fast-track: faz perguntas antes de gerar o plan
 
 **Por que isso importa:** SDD sem framework é possível, mas esses 3 resolvem o problema de "como começar" — cada um com um trade-off diferente entre flexibilidade, estrutura e lock-in.
 
-**Fonte:** [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) • [TLC Spec-Driven](https://lobehub.com/skills/tech-leads-club-agent-skills-tlc-spec-driven) • [Kiro](https://kiro.dev)
-
 #### 7.6 RPI: O Ciclo que Alimenta Cada Fase
 **A ideia:** RPI (Research → Plan → Implement) é o micro-ciclo dentro de cada fase do SDD:
 
@@ -625,7 +555,28 @@ Quick:     /spec new --quick → fast-track: faz perguntas antes de gerar o plan
 
 **Pra visualizar:** RPI = método científico no desenvolvimento: formular hipótese → documentar experimento → executar e observar.
 
-**Fonte:** [SDD para Devs — 3:12](https://youtu.be/YFDp-smGYqQ?t=192)
+#### 7.7 Avaliando Código Gerado por IA
+**A ideia:** Código gerado por IA que passa nos testes não é sinônimo de código de qualidade. Estudos mostram que código gerado por IA tem alta incidência de code smells, bugs silenciosos e falhas de segurança — mesmo quando os testes passam. Em Java, os problemas mais comuns são vazamento de memória, consultas repetidas ao banco (N+1), senhas/URLs fixas no código e erros engolidos. É papel do desenvolvedor revisar com olhar crítico.
+
+**Por que isso importa:** Se o time não tem um processo de validação, o débito técnico acumula rápido. O risco vai de código difícil de manter até falhas de segurança em produção. Saber avaliar separa o dev que "usa IA" do dev que "entrega qualidade com IA".
+
+**Pra visualizar:** Imagine que você pediu pra IA cozinhar um prato. Ela entregou algo bonito e quente — mas você precisa provar pra saber se está bom. Código é igual: "passou no fogo" (testes) não significa que está pronto pra servir.
+
+**Ferramentas relacionadas:** SonarQube, Checkstyle, PMD, SpotBugs, CodeRabbit
+
+#### 7.8 Na Prática: Como Validar o Código da IA
+**A ideia:** Um fluxo simples de 5 passos ajuda a não pular etapas:
+
+1. **Rode os testes:** `mvn test` ou `gradle test`. Se não passar, nem olhe o resto.
+2. **Analisador automático:** SonarQube, Checkstyle. Corrija o que ele apontar.
+3. **Peça pra IA revisar:** "Analise esse código como dev sênior — aponte problemas."
+4. **Revisão humana (rápida):** A regra de negócio faz sentido? Algo parece estranho?
+5. **Teste integrado:** Rode a aplicação completa. Veja se funciona junto.
+**Por que isso importa:** Esse fluxo é o que times maduros usam. Sem ele, código de baixa qualidade entra em produção. Com ele, você aproveita a velocidade da IA sem sacrificar qualidade. O segredo é saber quando aplicar todos os 5 passos (código crítico) vs quando simplificar (código simples).
+
+**Pra visualizar:** É como uma esteira de qualidade numa fábrica. Cada passo filtra um tipo de problema diferente. No final, o que sai é confiável.
+
+**Ferramentas relacionadas:** CodeRabbit, GitHub Code Review, Claude/ChatGPT/Copilot (como revisor), JUnit, Selenium, Spring Boot Test
 
 **Laboratório — Workshop Prático Final (70 min):**
 
@@ -665,3 +616,55 @@ Cada participante (ou dupla) recebe um requisito de funcionalidade e executa as 
 ### Protocolos e Qualidade
 - `MCP (Model Context Protocol)` — padrão Anthropic pra integração IA ↔ ferramentas
 - `RAGAS` — biblioteca pra métricas de qualidade de pipelines RAG
+
+---
+
+## Referências e Fontes
+
+### Módulo 1 — LLMs, Tokens e Fine-Tuning
+- [Anthropic Docs: Context Windows](https://platform.claude.com/docs/en/build-with-claude/context-windows) — janela de contexto, context rot, boas práticas
+- [Anthropic Glossary](https://platform.claude.com/docs/en/about-claude/glossary) — definições de token, LLM, RAG, temperatura
+- [OpenAI Prompt Guidance](https://developers.openai.com/api/docs/guides/prompt-guidance) — guia oficial de prompting para GPT-5.5
+- [OpenAI Prompting](https://developers.openai.com/api/docs/guides/prompting) — fundamentos de prompt engineering
+- [Paper: Attention is All You Need (Vaswani et al., 2017)](https://arxiv.org/abs/1706.03762) — o paper que criou a arquitetura Transformer
+- [Paper: Lottery Ticket Hypothesis (Frankle & Carbin, 2019)](https://arxiv.org/abs/1803.03635) — redes com 10-20% dos pesos igualam precisão
+- [Paper: SparseGPT (Frantar & Alistarh, 2023)](https://arxiv.org/abs/2301.00774) — remoção de 50-60% dos pesos sem retreino
+- [Paper: Wanda (Sun et al., 2024)](https://arxiv.org/abs/2306.11695) — poda simples por magnitude × ativação
+
+### Módulo 2 — Open-Source e Execução Local
+- [Ollama Docs](https://docs.ollama.com/) — documentação oficial: instalação, CLI, modelos
+- [Ollama Model Library](https://ollama.com/library) — biblioteca de modelos disponíveis
+- [Hugging Face Hub Docs](https://huggingface.co/docs/hub/main/en/index) — documentação oficial do hub de modelos e datasets
+
+### Módulo 3 — Prompt Engineering
+- [OpenAI Prompt Engineering Guide](https://developers.openai.com/api/docs/guides/prompt-engineering) — guia oficial com 6 estratégias
+- [Anthropic Claude Cookbook: Evaluator-Optimizer](https://platform.claude.com/cookbook/patterns-agents-evaluator-optimizer) — padrão gerador/avaliador
+- [OpenAI Prompt Optimization Cookbook](https://developers.openai.com/cookbook/examples/gpt-5/prompt-optimization-cookbook) — otimização de prompts com GPT-5
+
+### Módulo 4 — RAG, Embeddings e Graph RAG
+- [LangChain Retrieval Guide](https://docs.langchain.com/oss/javascript/langchain/retrieval) — pipeline RAG completo: loading, splitting, embedding
+- [LangChain: Build a RAG Agent](https://docs.langchain.com/oss/javascript/langchain/rag) — tutorial passo a passo com Claude
+- [Paper: GraphRAG (Microsoft, 2024)](https://arxiv.org/abs/2404.16130) — RAG baseado em grafos de conhecimento
+- [Paper: Lost in the Middle (Liu et al., 2023)](https://arxiv.org/abs/2307.03172) — degradação com contexto cheio
+
+### Módulo 5 — MCP e Agentes
+- [MCP Official Specification](https://modelcontextprotocol.io/specification) — especificação completa do protocolo
+- [MCP Documentation](https://modelcontextprotocol.io/docs) — guias de implementação
+- [MCP GitHub (TypeScript SDK)](https://github.com/modelcontextprotocol/typescript-sdk) — SDK oficial
+- [MCP GitHub (Python SDK)](https://github.com/modelcontextprotocol/python-sdk) — SDK oficial
+- [Anthropic Blog: Common Workflow Patterns](https://claude.com/blog/common-workflow-patterns-for-ai-agents-and-when-to-use-them) — patterns de agentes: quando usar cada um
+
+### Módulo 6 — Arquitetura de Contexto
+- [Anthropic: Code Review (Managed Service)](https://code.claude.com/docs/en/code-review) — code review multi-agente oficial
+- [Claude Blog: Code Review](https://claude.com/fr/blog/code-review) — como a Anthropic usa code review internamente
+
+### Módulo 7 — SDD e Avaliação de Código
+- [OpenSpec GitHub](https://github.com/fission-ai/OpenSpec) — framework SDD open-source (MIT, 48k+ stars)
+- [OpenSpec Docs](https://openspec.dev/) — documentação oficial
+- [Paper: Assessing AI-Generated Code Quality (Sonar, 2025)](https://arxiv.org/abs/2508.14727) — 4.442 tarefas Java, 5 LLMs — nenhuma correlação entre passar teste e qualidade
+- [SonarSource: Coding Personalities of LLMs](https://www.sonarsource.com/de/blog/the-coding-personalities-of-leading-llms/) — análise de "personalidade" de código de cada LLM
+- [Sonar AI Code Assurance](https://docs.sonarsource.com/sonarqube-server/2025.5/ai-capabilities/ai-code-assurance) — quality gates para código gerado por IA
+- [CodeRabbit Docs](https://docs.coderabbit.ai/) — documentação oficial de AI code review
+- [CodeRabbit GitHub](https://github.com/coderabbitai/awesome-coderabbit) — lista de recursos e integrações
+- [Anthropic: Evaluator-Optimizer Workflow](https://platform.claude.com/cookbook/patterns-agents-evaluator-optimizer) — padrão de separar gerador de avaliador
+- [Paper: LLM-as-Judge Rubric Design (ICSE 2026)](https://arxiv.org/abs/2511.10865) — structured rubrics melhoram agreement para κ=0.57-0.75

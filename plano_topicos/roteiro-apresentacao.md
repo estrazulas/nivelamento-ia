@@ -606,8 +606,8 @@ Lembram do progressive disclosure? Skills são a implmentação prática disso, 
 
 ---
 
-## Módulo 7 — SDD e Ferramentas (2h30 total)
-**Teoria: 1h40 | Lab: 50min | Slides: 6**
+## Módulo 7 — SDD e Ferramentas (~3h total)
+**Teoria: 2h10 | Lab: 50min | Slides: 8**
 
 ---
 
@@ -674,10 +674,9 @@ Lembram do progressive disclosure? Skills são a implmentação prática disso, 
 **🎤 Engajar**: "Alguém aqui já usou alguma? OpenSpec? TLC? Kiro?"
 
 ---
-
 **🔷 1. OpenSpec** — *CLI open-source • 25+ ferramentas • Brownfield-first • MIT*
 
-```
+```plaintext
 Explore:   /opsx:explore "ideia" → pesquisa viabilidade antes de começar
 Propose:   /opsx:propose "feature" → gera proposal.md + specs/ + design.md + tasks.md
 Update:    /opsx:update → revisa artefatos e mantém coerência
@@ -685,26 +684,26 @@ Execute:   /opsx:apply → implementa tasks
 Verify:    /opsx:verify → valida código vs artefatos (completeness, correctness, coherence)
 Archive:   /opsx:archive → arquiva change  |  /opsx:sync → merge delta specs
 Install:   npm install -g @fission-ai/openspec && openspec init
+
 ```
 
 ---
-
 **🔷 2. TLC Spec-Driven** — *Skill adaptativa (Tech Lead's Club) • Auto-sizing • Stack-agnostic*
 
-```
+```plaintext
 Setup:     npx skills add ... --skill tlc-spec-driven → .specs/project/ + .specs/codebase/ (7 docs)
 Specify:   "specify feature [nome]" → .specs/features/x/spec.md (user stories + critérios)
 Design:    "design feature [nome]" → .specs/features/x/design.md (arquitetura + decisões)
 Execute:   "break into tasks" → .specs/features/x/tasks.md  |  "implement task [N]" → execução
 Session:   "record decision" / "log blocker" / "pause work" → STATE.md persistido
 Extra:     Auto-sizing: small→quick | medium→spec | large→completo | complex→pesquisa+plano paralelo
+
 ```
 
 ---
-
 **🔷 3. Kiro** — *IDE + CLI (AWS) • PBT automático • Hooks • Living docs • Freemium*
 
-```
+```plaintext
 Steering:  kiro init → structure.md + tech.md + product.md (análise automática da base)
 Specify:   /spec new "feature" → requirements.md (EARS) + design.md (Mermaid) + tasks.md (linked)
 Execute:   /spec run <name> → implementação referenciando specs como ground truth
@@ -712,25 +711,77 @@ Extra:     /spec new --bugfix → root-cause analysis
            /spec new --quick → fast-track com perguntas antes de gerar
            Hooks event-driven: ao salvar componente, atualiza testes automaticamente
 Specs:     Feature specs (requirements-first ou design-first) | Bugfix specs | Quick plan
-```
 
+```
 **🎤 Engajar**: "Qual abordagem faz mais sentido pro seu contexto? Framework leve, skill adaptativa ou IDE completa?"
 
 **Transição**: "Cada um desses frameworks segue o ciclo SDD que acabamos de ver. Agora vamos colocar a mão na massa."
 
 ---
 
-### Slide 7.6 — Workshop Prático + Resumo Final (20 min)
-**🎯 Objetivo**: Lançar o laboratório e fechar o workshop.
+### Slide 7.6 — Workshop Prático (20 min)
+**🎯 Objetivo**: Lançar o laboratório.
 
 **Roteiro**:
 
 - Explicar a dinâmica: 70 minutos, 4 fases + apresentação.
 - "Cada dupla recebe um requisito real. Vocês vão fazer Specify → Design → Tasks → Execute."
-- Resumo final do workshop: "7 módulos. 16 horas. 3 ideias centrais:"
+- Reforçar que depois do workshop teremos uma seção sobre como avaliar o código gerado.
+
+---
+
+### Slide 7.7 — Avaliando Código Gerado por IA (10 min)
+**🎯 Objetivo**: Mostrar que código que passa nos testes ainda pode ter problemas.
+
+**Gatilho**: "Só porque a IA gerou código que compila e passa nos testes, não quer dizer que está bom."
+
+**Roteiro**:
+
+- **O problema**: Estudos mostram que código gerado por IA tem muitos problemas escondidos — código mal escrito, bugs silenciosos, falhas de segurança.
+- **O que a IA erra em Java**:
+  - Vazamento de memória (abre recurso e não fecha)
+  - Chamadas repetidas ao banco (mesma consulta num loop)
+  - Senhas e URLs fixas no código
+  - Erros engolidos (try sem catch ou catch vazio)
+  - Código muito complexo (muita responsabilidade numa função)
+- **O que só o humano avalia**: regra de negócio, contexto do time, decisões arquiteturais.
+- Percorrer as ferramentas no bloco inferior: SonarQube, Checkstyle, PMD, SpotBugs, CodeRabbit.
+- **🎤 Engajar**: "Alguém aqui já aprovou código gerado por IA e depois descobriu um problema?"
+**Transição**: "Sabendo onde podem estar os problemas, como montar um fluxo prático de validação?"
+
+---
+
+### Slide 7.8 — Na Prática: Como Validar o Código da IA (10 min)
+**🎯 Objetivo**: Ensinar um fluxo simples de 5 passos.
+
+**Gatilho**: "5 passos. Do teste ao merge. Toda vez que a IA gerar código."
+
+**Roteiro**:
+
+- **Passo 1 — Rode os testes**: mvn test ou gradle test. Se não passar, nem olhe o resto.
+- **Passo 2 — Analisador automático**: SonarQube, Checkstyle. Corrija o que apontar.
+- **Passo 3 — Peça pra IA revisar**: "Analise como dev sênior — aponte tudo que pode dar problema."
+- **Passo 4 — Revisão humana (rápida)**: A regra de negócio faz sentido? A IA sugeriu algo estranho?
+- **Passo 5 — Teste integrado**: Rode a aplicação completa, veja se está tudo funcionando junto.
+- **Cuidado**: testes gerados por IA podem "passar mas não testar nada" — sempre conferir.
+- **Dica**: código crítico (login, pagamento) → 5 passos. Código simples → passo 1 + 4 resolve.
+- Ferramentas: Maven/Gradle, SonarQube, Checkstyle, CodeRabbit, Claude/ChatGPT/Copilot como revisor.
+- **🎤 Engajar**: "Qual passo vocês já fazem hoje? Qual seria mais fácil de adicionar?"
+**Transição**: "Fechando o workshop, as 5 ideias centrais que levamos pra casa."
+
+---
+
+### Slide 7.9 — Resumo Final (5 min)
+**🎯 Objetivo**: Fechar o workshop com os principais takeaways.
+
+**Roteiro**:
+
+- Resumo final do workshop: "7 módulos. 16 horas. 5 ideias centrais:"
   1. "LLMs são completadores de padrões — contexto de qualidade > modelo caro."
-  2. "SDD + RPI + STATE.md = método pra desenvolver com IA sem perder coerência."
-  3. "Skills modulares > agentes gigantes. Arquitetura de contexto é o diferencial."
+  2. "Prompt engineering com estrutura — RTF, CARE, RISE, zero-shot, few-shot, cadeia de pensamento."
+  3. "RAG para conhecimento interno — IA consulta documentos reais da empresa em vez de depender da memória do modelo."
+  4. "MCP + Skills + Sub-agentes — ferramentas reais, conhecimento encapsulado, agentes focados."
+  5. "SDD + RPI + STATE.md — especificar antes de codar, planejar antes de executar, documentar enquanto faz."
 - **Encerramento**: "Especificar antes de codar. Planejar antes de executar. Documentar enquanto faz."
 
 ---
