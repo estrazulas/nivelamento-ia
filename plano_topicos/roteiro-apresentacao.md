@@ -725,7 +725,7 @@ Specs:     Feature specs (requirements-first ou design-first) | Bugfix specs | Q
 
 **Roteiro**:
 
-- Explicar a dinâmica: 50 minutos, 4 fases + apresentação.
+- Explicar a dinâmica: 70 minutos, 4 fases + apresentação.
 - "Cada dupla recebe um requisito real. Vocês vão fazer Specify → Design → Tasks → Execute."
 - Resumo final do workshop: "7 módulos. 16 horas. 3 ideias centrais:"
   1. "LLMs são completadores de padrões — contexto de qualidade > modelo caro."
@@ -735,9 +735,9 @@ Specs:     Feature specs (requirements-first ou design-first) | Bugfix specs | Q
 
 ---
 
-### Laboratório Módulo 7 (50 min)
-- 10 min: Specify (spec com user stories, metas, fora de escopo)
-- 10 min: Design (arquitetura e decisões técnicas)
-- 10 min: Tasks (3-5 tasks com definition of done)
-- 15 min: Execute (simular com sub-agents)
+### Laboratório Módulo 7 (70 min)
+- 15 min: Specify (spec com user stories, metas, fora de escopo)
+- 15 min: Design (arquitetura e decisões técnicas)
+- 15 min: Tasks (3-5 tasks com definition of done)
+- 20 min: Execute (simular com sub-agents)
 - 5 min: Apresentação do STATE.md final

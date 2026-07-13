@@ -245,9 +245,9 @@ Comparação coletiva: cada um mostra seu melhor prompt e o grupo discute o que 
 **Tópicos:**
 
 #### 4.1 RAG: A Cola na Prova
-**A ideia:** RAG (Retrieval-Augmented Generation) resolve 95% dos casos em que a IA precisa de conhecimento específico do seu domínio — sem retreinar nada. Em vez de confiar na memória da IA (que alucina, falha, desatualiza), você entrega os trechos relevantes do seu material junto com a pergunta. Tipo dar uma "cola" pra IA durante a prova.
+**A ideia:** RAG (Retrieval-Augmented Generation) resolve a maioria dos casos em que a IA precisa de conhecimento específico do seu domínio — sem retreinar nada. Em vez de confiar na memória da IA (que alucina, falha, desatualiza), você entrega os trechos relevantes do seu material junto com a pergunta. Tipo dar uma "cola" pra IA durante a prova.
 
-**Por que isso importa:** RAG é mais barato, mais rápido e mais fácil de atualizar que fine-tuning. Mudou a documentação? Reindexa. Não precisa retreinar nada. Pra 95% dos usos corporativos (FAQ, docs internas, base de conhecimento), RAG resolve.
+**Por que isso importa:** RAG é mais barato, mais rápido e mais fácil de atualizar que fine-tuning. Mudou a documentação? Reindexa. Não precisa retreinar nada. Para usos corporativos (FAQ, docs internas, base de conhecimento), RAG resolve.
 
 **Pra visualizar:** Fine-tuning = mandar o aluno estudar o livro inteiro antes da prova. RAG = deixar o livro aberto na página certa.
 
@@ -627,14 +627,14 @@ Quick:     /spec new --quick → fast-track: faz perguntas antes de gerar o plan
 
 **Fonte:** [SDD para Devs — 3:12](https://youtu.be/YFDp-smGYqQ?t=192)
 
-**Laboratório — Workshop Prático Final (50 min):**
+**Laboratório — Workshop Prático Final (70 min):**
 
 Cada participante (ou dupla) recebe um requisito de funcionalidade e executa as 4 fases do SDD com IA:
 
-1. **Specify (10 min):** escrever spec com user stories, metas e fora de escopo.
-2. **Design (10 min):** esboçar arquitetura e decisões técnicas.
-3. **Tasks (10 min):** quebrar em 3-5 tasks com definition of done.
-4. **Execute (15 min):** simular execução com sub-agents (ferramenta à escolha).
+1. **Specify (15 min):** escrever spec com user stories, metas e fora de escopo.
+2. **Design (15 min):** esboçar arquitetura e decisões técnicas.
+3. **Tasks (15 min):** quebrar em 3-5 tasks com definition of done.
+4. **Execute (20 min):** simular execução com sub-agents (ferramenta à escolha).
 5. **Apresentação (5 min):** cada dupla apresenta o STATE.md final. Discussão coletiva.
 
 ---
