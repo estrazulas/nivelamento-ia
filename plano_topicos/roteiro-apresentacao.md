@@ -614,11 +614,11 @@ Lembram do progressive disclosure? Skills são a implmentação prática disso, 
 ### Slide 7.1 — Por que Prompt Direto Falha (15 min)
 **🎯 Objetivo**: Justificar a necessidade de método.
 
-**Gatilho**: "Quem aqui já jogou um PRD gigante no ChatGPT e recebeu um plano raso?"
+**Gatilho**: "Quem aqui já jogou um PRD (Documento de Requisitos de Produto) gigante no ChatGPT e recebeu um plano raso?"
 
 **Roteiro**:
 
-- "Não é culpa da IA. É física da janela de contexto."
+- "Não é culpa da IA. É limitação física da janela de contexto."
 - "50 requisitos → prioriza início, ignora meio, alucina final."
 - "SDD não é burocracia — é estratégia pra contornar limitações das LLMs."
 **Transição**: "O SDD tem 4 fases. Vamos ver cada uma."

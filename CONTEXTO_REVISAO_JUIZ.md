@@ -9,7 +9,7 @@ Arquivos principais:
 - `plano_topicos/roteiro-revisao-juiz.md` — relatório com 83 intervenções e parecer do juiz
 
 ### Onde paramos
-Intervenção #58 (de 83). Já passamos #1 a #58 com ações discutidas.
+Intervenção #60 (de 83). Já passamos #1 a #60 com ações discutidas.
 
 ### Status das intervenções já discutidas
 
@@ -62,6 +62,7 @@ Intervenção #58 (de 83). Já passamos #1 a #58 com ações discutidas.
 - #56: "Não crie sub-agents" é dogmático → confirmado que é posição do Waldemar no vídeo (33:00). Workshop reproduz fielmente. Avançado discorda do autor, não do workshop.
 - #57: Contradiz documentação do Claude Code → nota: .claude/agents/*.md existe, Waldemar desencoraja super-agentes de 3000 linhas, não agentes focados de 100-200 linhas
 - #58: Sobreposição conceitual com M4 e M5 → 3 pontes verbais no roteiro (M4.5→M6, M7.2→M5.4, M6.2→M4)
+- #60: "Solução é 'use SDD' sem primeira ação concreta" no slide 7.1 → skip, mantido como está (discutido, sem mudanças necessárias)
 
 **Parcialmente resolvidas:**
 - #2: OpenCode como única ferramenta → apêndice de equivalentes pendente
@@ -69,7 +70,7 @@ Intervenção #58 (de 83). Já passamos #1 a #58 com ações discutidas.
 - #17+#18: Embedding/reindexa no M1 → decisão pendente
 
 **Próxima na fila:**
-- #59: "PRD" mencionado sem definição no slide 7.1
+- #61: "spec.md, design.md, tasks.md referenciados mas não mostrados"
 
 ### Insumos criados durante a revisão
 - `excalidraw/auxiliares/llamavsvllm/` — diagrama Ollama vs llama.cpp vs vLLM + explicação
@@ -98,7 +99,4 @@ Intervenção #58 (de 83). Já passamos #1 a #58 com ações discutidas.
 - Sempre diga em qual intervenção estamos e quantas faltam
 
 ### Próximas intervenções na fila
-#42+#43 — Intermediário + Avançado — Slide 4.4: "Graph RAG em 10 min é avançado demais + omite custo"
-#44 — Intermediário — Slide 4.5: "Maior diferencial recebe só 10 minutos"
-#45 — Avançado — Slide 4.5: "Regra dos 40% sem suporte empírico"
-... e seguimos até #83
+(vazia — todas as intervenções em fila já foram movidas para Resolvidas ou Próxima na fila)
