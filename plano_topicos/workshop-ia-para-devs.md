@@ -20,7 +20,7 @@
 - **Uma IDE com suporte a IA** — VS Code + Terminal com Opencode, GitHub Copilot, ou Claude Code, ou outros.
 **Nivelamento recomendado (não obrigatório):**
 
-- Assistir os 3 vídeos do [Plano de Nivelamento](plano-nivelamento-ia-dev.md) (~1h30 total):
+- Assistir os 3 vídeos de nivelamento (~1h30 total):
   1. Roadmap de IA para DevOps (20 min)
   2. Prompt Engineering — Guia Prático (1h10)
   3. SDD: Habilidade #1 para Devs (12 min)

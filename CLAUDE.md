@@ -2,14 +2,20 @@
 
 ## Excalidraw — Modelo de Apresentação
 
-**SEMPRE leia** [`excalidraw/modelo_apresentacao.md`](excalidraw/modelo_apresentacao.md) **ANTES de criar qualquer slide novo.**
+**SEMPRE leia** [`plano_topicos/modelo_apresentacao.md`](plano_topicos/modelo_apresentacao.md) **ANTES de criar qualquer slide novo.**
 Contém: grid de slides (2 colunas × N linhas), dimensões, cores do tema,
 tipografia, padrões de conteúdo (comparação 2 colunas, grid 2×2),
 script de exportação Python e checklist de validação.
 
-**Exemplo visual de referência**: [`excalidraw/prompts-engenharia.excalidraw`](excalidraw/prompts-engenharia.excalidraw)
+**Exemplo visual de referência**: [`excalidraw/modulo-03-prompt-engineering.excalidraw`](excalidraw/modulo-03-prompt-engineering.excalidraw)
 — apresentação completa com 6 slides. Use `get_code_snippet` ou leia o JSON
 para consultar posições, cores e dimensões reais de slides existentes.
+
+## Script de Geração Programática
+
+Para criar ou recriar slides sem usar o MCP, use [`scripts/gerar_slide.py`](scripts/gerar_slide.py)
+— contém helpers `Slide`, `save()`, `add_card()` e a paleta de cores do tema.
+Consulte [`scripts/COMO_USAR.md`](scripts/COMO_USAR.md) para a API completa.
 
 ## Excalidraw — Lições Aprendidas (NÃO REPETIR)
 
