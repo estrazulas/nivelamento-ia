@@ -268,7 +268,7 @@ Comparação coletiva: cada um mostra seu melhor prompt e o grupo discute o que 
 **Fonte:** [Mini Curso IA para Devs — 23:00](https://youtu.be/90lGnXnMqgo?t=1380)
 
 #### 4.3 Embeddings: Como a IA "Entende" Palavras
-**A ideia:** Embeddings transformam palavras em listas de números — tipo coordenadas GPS no espaço do significado. "Cachorro" e "gato" ficam perto (são pets). "Cachorro" e "carro" ficam longe. Num mapa 2D: "rei" e "rainha" estariam próximos; "homem" e "mulher" também, mas em outra região. 
+**A ideia:** Embeddings transformam palavras em listas de números — tipo coordenadas GPS no espaço do significado. "Cachorro" e "gato" ficam perto (são pets). "Cachorro" e "carro" ficam longe. Num mapa 2D: "rei" e "rainha" estariam próximos; "homem" e "mulher" também, mas em outra região.
 
 Sem embeddings, a IA trataria "automóvel" e "carro" como palavras diferentes.
 
@@ -288,7 +288,8 @@ Sem embeddings, a IA trataria "automóvel" e "carro" como palavras diferentes.
 **Fonte:** [Mini Curso IA para Devs — 23:00](https://youtu.be/90lGnXnMqgo?t=1380)
 
 #### 4.5 Engenharia de Contexto e a Regra dos 50/70%
-**A ideia:** Contexto é o maior diferencial no uso de IA — mais que o modelo escolhido. Mas tem um limite: a **regra dos 50-70%** diz pra usar no máximo 70% da janela de contexto. Se o modelo suporta 200 mil tokens, mantenha abaixo de 140 mil. Acima disso, o modelo degrada.   
+**A ideia:** Contexto é o maior diferencial no uso de IA — mais que o modelo escolhido. Mas tem um limite: a **regra dos 50-70%** diz pra usar no máximo 70% da janela de contexto. Se o modelo suporta 200 mil tokens, mantenha abaixo de 140 mil. Acima disso, o modelo degrada.
+
 **Progressive disclosure** resolve isso: carrega só o necessário, só quando necessário — como um garçom que traz primeiro a entrada, depois o prato principal, depois a sobremesa, não o pedido inteiro.
 
 **Por que isso importa:** É a diferença entre uma IA que acerta e uma que alucina, com os mesmos modelo e pergunta. A qualidade do contexto impacta mais que o modelo ou o prompt.
@@ -540,25 +541,79 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 **Fonte:** [Mini Curso IA para Devs — 41:00](https://youtu.be/90lGnXnMqgo?t=2460)
 
-#### 7.5 Ferramentas: O Que Usar e Quando
-**A ideia:** O ecossistema de ferramentas de IA pra desenvolvimento em 2025:
+#### 7.5 Frameworks SDD: OpenSpec, TLC Spec-Driven e Kiro
+**A ideia:** Em vez de ferramentas de IA genéricas, existem frameworks especializados em SDD que implementam o ciclo Specify → Design → Tasks → Execute. Cada um com sua filosofia e comandos próprios.
 
-| Ferramenta | Diferencial | Ideal pra |
-| --- | --- | --- |
-| Cursor | Multi-agentes, plan mode, skills e MCPs | Experiência mais completa |
-| GitHub Copilot | Funciona em qualquer IDE, ecossistema GitHub | Times no GitHub |
-| Claude Code | Terminal, modelos Claude de alta qualidade, onboard nativo | Quem prefere terminal |
-| Windsurf | Browser interno embutido | Devs frontend |
-| Cline / Roo Code | Extensões VS Code gratuitas com MCP | Quem não quer pagar |
-| Continue / Aider | Open-source, foco em planejamento | Quer controle total |
+---
+**🔷 OpenSpec** — *Framework SDD open-source (Fission-AI / MIT)*
 
-**Critérios de escolha:** ecossistema (usa GitHub? → Copilot), autonomia (modo agente? → Cursor ou Claude Code), custo (orçamento zero? → Cline/Continue), stack (frontend pesado? → Windsurf).
+```plaintext
+Explore:   /opsx:explore "ideia" → pesquisa viabilidade antes de começar
+Propose:   /opsx:propose "feature" → gera proposal.md + specs/ + design.md + tasks.md
+Update:    /opsx:update → revisa artefatos e mantém coerência
+Execute:   /opsx:apply → implementa tasks do change
+Verify:    /opsx:verify → escaneia código vs artefatos (completeness, correctness, coherence)
+Archive:   /opsx:archive → arquiva change  |  /opsx:sync → merge delta specs
+Install:   npm install -g @fission-ai/openspec && openspec init
 
-**Por que isso importa:** Não existe ferramenta universal melhor. Existe a certa pro seu contexto. Conhecer o panorama evita o viés de "uso a primeira que vi e nunca testei outras".
+```
 
-**Pra visualizar:** Escolher IDE com IA é que nem carro: SUV completo (Cursor), integrado (Copilot), moto esportiva (Claude Code), conversível (Windsurf).
+- Compatível com 25+ ferramentas (Claude Code, Cursor, Copilot, Codex)
+- Brownfield-first: projetado para projetos existentes
+- Artefatos em `openspec/specs/` e `openspec/changes/`
+- `/opsx:verify` retorna issues como CRITICAL, WARNING, SUGGESTION — não gera testes, só valida coerência
 
-**Fonte:** [Mini Curso IA para Devs — 66:00](https://youtu.be/90lGnXnMqgo?t=3960)
+---
+**🔷 TLC Spec-Driven** — *Skill adaptativa (Tech Lead's Club)*
+
+```plaintext
+Setup:     npx skills add ... --skill tlc-spec-driven → .specs/project/ + .specs/codebase/ (7 docs)
+Specify:   "specify feature [nome]" → .specs/features/x/spec.md (user stories P1/P2/P3 + acceptance criteria WHEN/THEN/SHALL)
+Design:    "design feature [nome]" → .specs/features/x/design.md (arquitetura + decisões)
+Execute:   "break into tasks" → .specs/features/x/tasks.md  |  "implement task [N]" → execução
+Validate:  "validate" / "verify" → valida implementação contra critérios de aceitação
+Session:   "record decision" / "log blocker" / "pause work" → STATE.md persistido entre sessões
+
+```
+
+- **Auto-sizing**: pula fases automaticamente conforme complexidade (Small → quick, Medium → spec, Large → completo, Complex → pesquisa + plano paralelo)
+- Acceptance criteria escritos em formato WHEN/THEN/SHALL durante o Specify
+- Gera `.specs/` com análise brownfield: stack, arquitetura, convenções
+- Alvo de contexto: <40k tokens com carregamento sob demanda
+- Stack-agnostic, funciona no Claude Code, Cursor e Codex
+- Gatilhos por linguagem natural (não slash commands)
+
+---
+**🔷 Kiro** — *IDE + CLI com specs integrados (AWS)*
+
+```plaintext
+Steering:  kiro init (CLI) → structure.md + tech.md + product.md (análise automática da base)
+Specify:   /spec new "feature" → requirements.md (EARS) + design.md (Mermaid) + tasks.md (linked)
+Execute:   /spec run <name> → implementação autônoma referenciando specs como ground truth
+Bugfix:    /spec new --bugfix → root-cause analysis com guardrails
+Quick:     /spec new --quick → fast-track: faz perguntas antes de gerar o plano
+
+```
+
+- **Property-Based Testing**: extrai propriedades dos specs e gera varios testes
+- **Hooks**: automações event-driven (ex: ao salvar componente, atualiza testes automaticamente)
+- Specs viram living documentation que sincroniza com o código
+- Suporta feature specs (requirements-first ou design-first), bugfix specs, quick plan
+
+---
+**📊 Comparação**
+
+| Critério | OpenSpec | TLC Spec-Driven | Kiro |
+| --- | --- | --- | --- |
+| Tipo | Framework CLI | Skill adaptativa | IDE + CLI |
+| Open-source | ✅ MIT | ✅ | ❌ (freemium) |
+| Auto-sizing | ❌ | ✅ | ❌ |
+| Verificação | /opsx:verify — valida código vs artefatos mas não induz criação de testes unitarios ou e2e | Validate fase — agent verifica contra acceptance criteria (induz a criação e cobertura de testes) | gera testes automaticamente baseados em propriedades (propoe tasks opcionais de testes) |
+| Vendor lock | Nenhum | Nenhum | IDE própria |
+
+**Por que isso importa:** SDD sem framework é possível, mas esses 3 resolvem o problema de "como começar" — cada um com um trade-off diferente entre flexibilidade, estrutura e lock-in.
+
+**Fonte:** [Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec) • [TLC Spec-Driven](https://lobehub.com/skills/tech-leads-club-agent-skills-tlc-spec-driven) • [Kiro](https://kiro.dev)
 
 #### 7.6 RPI: O Ciclo que Alimenta Cada Fase
 **A ideia:** RPI (Research → Plan → Implement) é o micro-ciclo dentro de cada fase do SDD:

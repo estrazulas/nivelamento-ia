@@ -664,18 +664,59 @@ Lembram do progressive disclosure? Skills são a implmentação prática disso, 
 
 ---
 
-### Slide 7.5 — Ferramentas: O Que Usar Quando (20 min)
-**🎯 Objetivo**: Dar o panorama de ferramentas.
+### Slide 7.5 — Frameworks SDD: OpenSpec, TLC, Kiro (20 min)
+**🎯 Objetivo**: Apresentar os frameworks que implementam SDD na prática.
 
 **Roteiro**:
 
-- "Não existe ferramenta universal melhor. Existe a certa pro seu contexto."
-- Percorrer as 6 ferramentas. 2 min cada.
-- **Analogia dos carros**: "Cursor = SUV completo. Copilot = integrado. Claude Code = moto esportiva. Windsurf = conversível."
-- Critérios: ecossistema, autonomia, custo, stack.
-**🎤 Engajar**: "Qual ferramenta vocês usam? Por que escolheram ela?"
+- "SDD não é teoria — existem ferramentas que implementam o ciclo completo."
+- "Cada uma tem uma abordagem diferente. Vamos ver 3."
+**🎤 Engajar**: "Alguém aqui já usou alguma? OpenSpec? TLC? Kiro?"
 
-**Transição**: "Agora, o workshop prático — vocês vão executar o ciclo SDD completo."
+---
+
+**🔷 1. OpenSpec** — *CLI open-source • 25+ ferramentas • Brownfield-first • MIT*
+
+```
+Explore:   /opsx:explore "ideia" → pesquisa viabilidade antes de começar
+Propose:   /opsx:propose "feature" → gera proposal.md + specs/ + design.md + tasks.md
+Update:    /opsx:update → revisa artefatos e mantém coerência
+Execute:   /opsx:apply → implementa tasks
+Verify:    /opsx:verify → valida código vs artefatos (completeness, correctness, coherence)
+Archive:   /opsx:archive → arquiva change  |  /opsx:sync → merge delta specs
+Install:   npm install -g @fission-ai/openspec && openspec init
+```
+
+---
+
+**🔷 2. TLC Spec-Driven** — *Skill adaptativa (Tech Lead's Club) • Auto-sizing • Stack-agnostic*
+
+```
+Setup:     npx skills add ... --skill tlc-spec-driven → .specs/project/ + .specs/codebase/ (7 docs)
+Specify:   "specify feature [nome]" → .specs/features/x/spec.md (user stories + critérios)
+Design:    "design feature [nome]" → .specs/features/x/design.md (arquitetura + decisões)
+Execute:   "break into tasks" → .specs/features/x/tasks.md  |  "implement task [N]" → execução
+Session:   "record decision" / "log blocker" / "pause work" → STATE.md persistido
+Extra:     Auto-sizing: small→quick | medium→spec | large→completo | complex→pesquisa+plano paralelo
+```
+
+---
+
+**🔷 3. Kiro** — *IDE + CLI (AWS) • PBT automático • Hooks • Living docs • Freemium*
+
+```
+Steering:  kiro init → structure.md + tech.md + product.md (análise automática da base)
+Specify:   /spec new "feature" → requirements.md (EARS) + design.md (Mermaid) + tasks.md (linked)
+Execute:   /spec run <name> → implementação referenciando specs como ground truth
+Extra:     /spec new --bugfix → root-cause analysis
+           /spec new --quick → fast-track com perguntas antes de gerar
+           Hooks event-driven: ao salvar componente, atualiza testes automaticamente
+Specs:     Feature specs (requirements-first ou design-first) | Bugfix specs | Quick plan
+```
+
+**🎤 Engajar**: "Qual abordagem faz mais sentido pro seu contexto? Framework leve, skill adaptativa ou IDE completa?"
+
+**Transição**: "Cada um desses frameworks segue o ciclo SDD que acabamos de ver. Agora vamos colocar a mão na massa."
 
 ---
 
