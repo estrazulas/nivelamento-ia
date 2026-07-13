@@ -6,8 +6,9 @@ Workshop de IA para desenvolvimento de software, 16 horas, 2 dias, 7 modulos.
 
 | Arquivo / Pasta | Resumo |
 | --- | --- |
-| workshop-ia-para-devs.md | Conteudo programatico completo do workshop, modulos 1 a 7, com topicos, laboratorios e glossario com 109 termos. |
-| roteiro-apresentacao.md | Roteiro linha a linha do instrutor com falas, analogias e transicoes entre slides. |
+| [workshop-ia-para-devs.md](plano_topicos/workshop-ia-para-devs.md) | Conteudo programatico completo do workshop, modulos 1 a 7, com topicos, laboratorios e glossario com 109 termos. |
+| [roteiro-apresentacao.md](plano_topicos/roteiro-apresentacao.md) | Roteiro linha a linha do instrutor com falas, analogias e transicoes entre slides. |
+| [links.md](plano_topicos/links.md) | Todos os links do projeto organizados por modulo (clicaveis nos slides e referencias externas). |
 | modelo_apresentacao.md | Especificacao visual dos slides: grid, dimensoes, cores, tipografia e checklist de exportacao. |
 | labs/ | Estrutura dos 7 laboratorios praticos, um por modulo, com materiais recomendados para preparacao. |
 | roteiro-revisao-juiz.md | Relatorio de revisao com 83 intervencoes de 3 perfis de alunos e parecer do juiz. |
