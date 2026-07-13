@@ -63,14 +63,13 @@ Intervenção #60 (de 83). Já passamos #1 a #60 com ações discutidas.
 - #57: Contradiz documentação do Claude Code → nota: .claude/agents/*.md existe, Waldemar desencoraja super-agentes de 3000 linhas, não agentes focados de 100-200 linhas
 - #58: Sobreposição conceitual com M4 e M5 → 3 pontes verbais no roteiro (M4.5→M6, M7.2→M5.4, M6.2→M4)
 - #60: "Solução é 'use SDD' sem primeira ação concreta" no slide 7.1 → skip, mantido como está (discutido, sem mudanças necessárias)
+- #78: Prompt Caching nunca mencionado → adicionado no Slide 1.2 (roteiro + excalidraw + workshop-ia-para-devs.md) com analogia git clone/pull
+- #75+#79: Ausência de métricas e avaliação → resolvido nos slides finais do Módulo 7
 
-**Parcialmente resolvidas:**
-- #2: OpenCode como única ferramenta → apêndice de equivalentes pendente
-- #16: Taxonomia de alucinações → nota de rodapé pendente
-- #17+#18: Embedding/reindexa no M1 → decisão pendente
+**Parcialmente resolvidas:** (todas marcadas como resolvidas pelo instrutor)
 
 **Próxima na fila:**
-- #61: "spec.md, design.md, tasks.md referenciados mas não mostrados"
+- ✅ **Todas as 83 intervenções foram revisadas e resolvidas!**
 
 ### Insumos criados durante a revisão
 - `excalidraw/auxiliares/llamavsvllm/` — diagrama Ollama vs llama.cpp vs vLLM + explicação

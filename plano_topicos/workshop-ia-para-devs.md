@@ -59,11 +59,13 @@ Dar a devs o que precisam pra usar IA generativa com segurança e produtividade 
 **Pra visualizar:** Um dev que recebia specs só por texto agora recebe fotos do problema, áudios do cliente e vídeos do comportamento. Exemplo aplicação web rodando no Google Chrome com gemini-nano multimodal.
 
 #### 1.3 Tokens: A Moeda da IA
-**A ideia:** Token é a unidade de processamento — cada palavra ou fragmento que o modelo lê ou gera. "Inteligência artificial" pode ser 2 tokens. Toda API cobra por token (input + output). Uma conversa típica de desenvolvimento consome entre 2 mil e 20 mil tokens. Modelos maiores têm janelas maiores (Gemini 1.5 Pro: 2M tokens ≈ 3 livros). Mas tem uma pegadinha: se você lotar a janela, o modelo começa a "esquecer" coisas no meio.
+**A ideia:** Token é a unidade de processamento, cada palavra ou fragmento que o modelo lê ou gera. "Inteligência artificial" pode ser 2 tokens. Toda API cobra por token (input + output). Uma conversa típica de desenvolvimento consome entre 2 mil e 20 mil tokens. Modelos maiores têm janelas maiores (Gemini 1.5 Pro: 2M tokens ≈ 3 livros). Mas tem uma pegadinha: se você lotar a janela, o modelo começa a "esquecer" coisas no meio.
 
 **Por que isso importa:** Token = custo. Quem entende tokenização consegue estimar gastos, otimizar prompts e evitar desperdício com contexto redundante. Também ajuda a não estourar a janela e degradar a qualidade.
 
-**Pra visualizar:** Token é que nem kilowatt — a moeda de consumo. A janela de contexto é a RAM: você pode encher, mas o desempenho piora antes do limite.
+**Pra visualizar:** Token é que nem kilowatt, a moeda de consumo. A janela de contexto é a RAM: você pode encher, mas o desempenho piora antes do limite.
+
+**Prompt Caching:** As principais APIs (Anthropic, OpenAI, Google) cacheiam automaticamente instruções repetidas e cobram ~90% menos. É tipo Git: a primeira vez que você clona um repositório, paga o custo cheio. Depois, `git pull` só baixa o que mudou, quase de graça. A técnica #1 pra reduzir custos com IA em 2025-2026, e a conexão direta entre custo (aqui no M1) e arquitetura de contexto (Módulo 6).
 
 #### 1.4 As 4 Grandes Limitações
 **A ideia:**

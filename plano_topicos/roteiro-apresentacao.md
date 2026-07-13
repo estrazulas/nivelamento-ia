@@ -60,6 +60,8 @@ rodar
 - Explicar que cada palavra ou fragmento é um token. "'Inteligência artificial' = 2 tokens."
 - **Janela de contexto**: "A janela é a RAM da IA. O Gemini 1.5 Pro suporta 2 milhões de tokens — cerca de 3 livros. Mas tem uma pegadinha..."
 - **Pegadinha**: "Se você lotar a janela, o modelo começa a ESQUECER coisas no meio. Prioriza início e fim, igual um aluno que só lê o resumo."
+- **Prompt Caching**: "Mas tem um truque que corta seus custos pela metade: prompt caching. Quando você manda instruções repetidas pra API (contexto do projeto, regras de estilo), paga integral toda vez. As principais APIs cacheiam automaticamente instruções repetidas e cobram ~90% MENOS. É tipo Git: a primeira vez que você clona um repositório, baixa TUDO — custo cheio. Nas seguintes, `git pull` só baixa o que mudou — quase de graça. É a técnica #1 pra reduzir custos com IA em 2025-2026."
+- **Ponte pro Módulo 6**: "A forma como você organiza essas instruções — que vamos ver no Módulo 6, Arquitetura de Contexto — tem impacto DIRETO no seu bolso. Um arquivo de instruções bem escrito de 200 linhas custa centavos por sessão com cache."
 - Modelos multimodais: "Além de texto, você pode mandar print de bug, áudio de reunião, wireframe rabiscado. A IA processa tudo junto."
 **🎤 Engajar**: "Alguém aqui já estourou a janela de contexto sem saber? O que aconteceu com a qualidade?"
 
@@ -330,7 +332,8 @@ A "mágica" é que esses números não foram escritos por um humano. Foram desco
 ### Laboratório Módulo 3 (45 min)
 - 3 cenários: SQL com RTF, migração com CARE, bug com RISE+CoT.
 - Cada um mostra seu melhor prompt. Grupo discute.
-- 10 min finais: compartilhar aprendizados.
+- 10 min finais: compartilhar aprendizados.:
+**Transição**: "Você aprendeu a pedir do jeito certo. Agora, e quando a IA precisa de informação que não cabe no prompt? É aí que entra o RAG."
 
 ---
 
