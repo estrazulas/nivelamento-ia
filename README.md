@@ -11,7 +11,6 @@ Workshop de IA para desenvolvimento de software, 16 horas, 2 dias, 7 modulos.
 | [links.md](plano_topicos/links.md) | Todos os links do projeto organizados por modulo (clicaveis nos slides e referencias externas). |
 | modelo_apresentacao.md | Especificacao visual dos slides: grid, dimensoes, cores, tipografia e checklist de exportacao. |
 | labs/ | Estrutura dos 7 laboratorios praticos, um por modulo, com materiais recomendados para preparacao. |
-| roteiro-revisao-juiz.md | Relatorio de revisao com 83 intervencoes de 3 perfis de alunos e parecer do juiz. |
 
 ## excalidraw
 
