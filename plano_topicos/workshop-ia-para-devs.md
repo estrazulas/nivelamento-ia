@@ -7,7 +7,7 @@
 
 **Formato:** Teoria + laboratórios práticos (30-50 min por módulo)
 
-**Referências: **No final do documento
+**Referências e glossário: **No final do documento 
 
 ### Pré-requisitos
 **Ferramenta obrigatória:**
@@ -664,9 +664,98 @@ Cada participante (ou dupla) recebe um requisito de funcionalidade e executa as 
 - [OpenSpec GitHub](https://github.com/fission-ai/OpenSpec) — framework SDD open-source (MIT, 48k+ stars)
 - [OpenSpec Docs](https://openspec.dev/) — documentação oficial
 - [Paper: Assessing AI-Generated Code Quality (Sonar, 2025)](https://arxiv.org/abs/2508.14727) — 4.442 tarefas Java, 5 LLMs — nenhuma correlação entre passar teste e qualidade
-- [SonarSource: Coding Personalities of LLMs](https://www.sonarsource.com/de/blog/the-coding-personalities-of-leading-llms/) — análise de "personalidade" de código de cada LLM
-- [Sonar AI Code Assurance](https://docs.sonarsource.com/sonarqube-server/2025.5/ai-capabilities/ai-code-assurance) — quality gates para código gerado por IA
-- [CodeRabbit Docs](https://docs.coderabbit.ai/) — documentação oficial de AI code review
-- [CodeRabbit GitHub](https://github.com/coderabbitai/awesome-coderabbit) — lista de recursos e integrações
-- [Anthropic: Evaluator-Optimizer Workflow](https://platform.claude.com/cookbook/patterns-agents-evaluator-optimizer) — padrão de separar gerador de avaliador
-- [Paper: LLM-as-Judge Rubric Design (ICSE 2026)](https://arxiv.org/abs/2511.10865) — structured rubrics melhoram agreement para κ=0.57-0.75
+
+---
+
+## 📖 Glossário do Workshop
+
+### Módulo 1 — Fundamentos
+- **LLM** (Large Language Model): Modelo de IA treinado com bilhões de textos para prever e gerar linguagem. Ex: GPT, Claude, Gemini. *Módulo 1*
+- **Token**: Unidade de processamento da IA — um pedaço de texto (palavra, sílaba ou caractere). "Inteligência artificial" = 2 tokens. *Módulo 1*
+- **Tokenização**: Processo de quebrar texto em tokens. Diferente de contar palavras. *Módulo 1*
+- **Janela de contexto** (Context Window): Quantidade máxima de tokens que o modelo consegue "ver" de uma vez. É a RAM da IA. *Módulo 1*
+- **Autocomplete**: Mecanismo de prever a próxima palavra. LLMs são autocompleters turbinados. *Módulo 1*
+- **Alucinação**: Quando a IA inventa uma resposta com confiança, mas ela é falsa. *Módulo 1*
+- **Data de corte**: Data limite do conhecimento do modelo. O modelo não sabe o que aconteceu depois. *Módulo 1*
+- **Não-determinismo**: A mesma entrada pode gerar respostas diferentes. Inerente a modelos probabilísticos. *Módulo 1*
+- **Parâmetros**: Números internos que o modelo ajusta durante o treinamento (pesos das conexões). *Módulo 1*
+- **Temperatura**: Controla o nível de criatividade. 0 = sempre a mesma resposta (determinístico). 1+ = mais variação. *Módulo 1*
+- **Top-p**: Alternativa à temperatura. Controla o vocabulário considerado: pega os tokens mais prováveis até somar p% de probabilidade. *Módulo 1*
+- **Pré-treinamento**: Fase onde o modelo é treinado com bilhões de textos para aprender padrões da linguagem. Custa milhões de dólares. *Módulo 1*
+- **Fine-tuning**: Ajuste fino do modelo pré-treinado para uma tarefa ou domínio específico. *Módulo 1*
+- **Multimodal**: Capacidade de processar mais de um formato (texto, imagem, áudio, vídeo) simultaneamente. *Módulo 1*
+- **Kilowatt da IA**: Analogia: token é a unidade de consumo, como kilowatt na conta de luz. *Módulo 1*
+- **Prompt Caching**: Técnica onde APIs guardam instruções repetidas e cobram ~90% menos na reutilização. Tipo git: clone vs pull. *Módulo 1*
+
+### Módulo 2 — Modelos Locais vs Cloud
+- **SLM** (Small Language Model): Modelo pequeno que roda localmente (ex: Phi-3, Llama 8B). Entrega 80% da qualidade por 10% do custo. *Módulo 2*
+- **Ollama**: Ferramenta para rodar modelos locais (Llama, Phi-3) sem depender de internet ou API key. *Módulo 2*
+- **vLLM**: Engine de alta performance para servir modelos LLM. Suporta batching dinâmico, PagedAttention. *Módulo 2*
+- **llama.cpp**: Biblioteca em C++ para executar modelos quantizados em CPU/GPU de consumidor. *Módulo 2*
+- **TPS** (Tokens Por Segundo): Métrica de velocidade de geração — quantos tokens o modelo produz por segundo. *Módulo 2*
+
+### Módulo 3 — Prompt Engineering
+- **Prompt**: A instrução ou pergunta que você envia para a IA. É o "input" do modelo. *Módulo 3*
+- **Prompt Engineering**: Arte de construir prompts eficazes para obter respostas de qualidade. *Módulo 3*
+- **Role** (Papel): Definir quem a IA deve "ser" no prompt (ex: "Você é um arquiteto Java sênior"). *Módulo 3*
+- **System Prompt**: Instrução fixa que define o comportamento do agente, enviada antes de cada conversa. *Módulo 3*
+- **Zero-shot**: Pedir algo à IA sem dar exemplos. Funciona bem para tarefas simples. *Módulo 3*
+- **Few-shot**: Dar 2-3 exemplos no prompt antes de pedir a tarefa. A técnica mais subestimada. *Módulo 3*
+- **Chain of Thought** (CoT): Pedir para a IA "pensar passo a passo" antes de responder. Reduz alucinações. *Módulo 3*
+- **RTF** (Role-Task-Format): Framework de prompt em 3 etapas: defina o papel, a tarefa e o formato da resposta. *Módulo 3*
+- **CARE** (Context-Action-Result-Example): Framework com contexto, ação, resultado esperado e exemplo. *Módulo 3*
+- **RISE** (Role-Input-Steps-Expectation): Framework para tarefas complexas: papel, entrada, passos, expectativa. *Módulo 3*
+
+### Módulo 4 — RAG e Embeddings
+- **RAG** (Retrieval-Augmented Generation): Técnica que busca documentos relevantes e injeta no contexto da IA, sem precisar treinar o modelo. *Módulo 4*
+- **Embedding**: Representação numérica do significado de um texto (vetor). É o "GPS no espaço do significado". *Módulo 4*
+- **Chunking**: Quebrar documentos grandes em pedaços menores (ex: 500 tokens) para busca eficiente. *Módulo 4*
+- **Semantic Search**: Busca por significado (usando embeddings), não por palavras exatas. *Módulo 4*
+- **Hybrid Search**: Combina busca semântica + busca por palavras-chave (BM25) para melhores resultados. *Módulo 4*
+- **BM25**: Algoritmo clássico de busca por palavras-chave. Versão moderna do TF-IDF. *Módulo 4*
+- **Re-ranking**: Pegar os resultados da busca e reordenar por relevância real. Normalmente usa cross-encoder. *Módulo 4*
+- **Cross-encoder**: Modelo que compara dois textos lado a lado e dá uma nota de similaridade. Mais preciso, mais lento. *Módulo 4*
+- **Bi-encoder**: Modelo que converte cada texto em embedding separadamente. Mais rápido para busca em larga escala. *Módulo 4*
+- **PCA** (Principal Component Analysis): Técnica que reduz N dimensões para as mais importantes. "A máquina que ranqueia o que importa." *Módulo 4*
+- **Graph RAG**: RAG que extrai entidades e relações de documentos em um grafo, depois consulta o grafo. Custo 5-10x maior. *Módulo 4*
+- **Cypher**: Linguagem de consulta para bancos de grafos (Neo4j). Usada em Graph RAG. *Módulo 4*
+- **Neo4j**: Banco de dados orientado a grafos. Às vezes usado como armazenamento para Graph RAG. *Módulo 4*
+
+### Módulo 5 — MCP, Agentes e Ferramentas
+- **MCP** (Model Context Protocol): Protocolo universal para conectar IAs a ferramentas externas (APIs, bancos, arquivos). Padrão mais adotado em 2026. *Módulo 5*
+- **Ferramenta** (Tool): Uma função que a IA pode chamar (ex: buscar no Jira, criar repositório). *Módulo 5*
+- **Function Calling**: Mecanismo onde o modelo retorna uma chamada de função estruturada, executada pelo seu código. *Módulo 5*
+- **Agente**: Looping autônomo onde a IA recebe uma tarefa, escolhe ferramentas, executa, observa, até completar. *Módulo 5*
+- **Sub-agente**: Agente especializado criado por outro agente para delegar sub-tarefas. *Módulo 5*
+- **Skill**: Conhecimento procedural estável encapsulado (ex: "como criar testes unitários"). É o "README da IA". *Módulo 5*
+- **Agents.md**: Arquivo de configuração de agentes no Claude Code. Define ferramentas, instruções e comportamentos. *Módulo 5*
+- **CLAUDE.md**: Arquivo de instruções globais do projeto para o Claude Code. Guia de estilo, convenções, regras. *Módulo 5*
+- **SDD** (Specification-Driven Development): Metodologia que usa especificações formais (spec.md) para guiar a IA. *Módulo 5*
+- **STATE.md**: Arquivo de estado que preserva o progresso entre sessões da IA. Evita retrabalho. *Módulo 5*
+- **Prompt Injection**: Ataque onde instruções maliciosas na entrada do usuário sequestram o comportamento da IA. *Módulo 5*
+- **Excessive Agency**: Quando a IA tem mais permissões do que deveria, podendo executar ações destrutivas. *Módulo 5*
+- **Tool Poisoning**: Ataque onde uma ferramenta da IA é comprometida para retornar dados falsos. *Módulo 5*
+- **LangGraph**: Framework para construir agentes como grafos de estados (ciclos, forks, joins). *Módulo 5*
+- **CrewAI**: Framework para orquestrar múltiplos agentes colaborando em papéis definidos. *Módulo 5*
+- **AutoGen**: Framework da Microsoft para agentes conversacionais multi-agente. *Módulo 5*
+
+### Módulo 6 — Arquitetura de Contexto
+- **Arquitetura de Contexto**: Metodologia para organizar instruções da IA em camadas (Agents.md, Skills, MCPs, SDD) para contexto limpo e barato. *Módulo 6*
+- **Estado** (State): Informação preservada entre interações com a IA. O STATE.md é o gerenciador de estado. *Módulo 6*
+
+### Módulo 7 — SDD e Ferramentas
+- **Transformer**: Arquitetura de rede neural que revolucionou a IA. Base de todos os LLMs modernos (GPT, Claude, Gemini). *Módulo 7*
+- **Self-attention**: Mecanismo do Transformer que calcula a importância de cada palavra em relação às outras. *Módulo 7*
+- **RAGAS** (RAG Assessment): Framework para medir qualidade de RAG — fidelidade, relevância, precisão do contexto. *Módulo 7*
+- **LLM-as-Judge**: Usar um LLM para avaliar a qualidade da saída de outro LLM. *Módulo 7*
+
+### Transversal
+- **OpenCode**: Ferramenta de AI coding integrada ao terminal do VS Code. Usada como ferramenta principal nos laboratórios. *Transversal*
+- **Cursor**: IDE com AI integrada. Alternativa ao OpenCode. *Transversal*
+- **Claude Code**: CLI da Anthropic para coding assistido por IA. Alternativa ao OpenCode. *Transversal*
+- **Copilot** (GitHub Copilot): AI pair programmer da Microsoft. Alternativa ao OpenCode. *Transversal*
+- **OpenAPI**: Especificação para descrever APIs REST. Usada por MCP Servers. *Transversal*
+- **LSP** (Language Server Protocol): Protocolo para autocomplete e diagnósticos em IDEs. *Transversal*
+- **CI/CD**: Pipeline de integração e deploy contínuos. Automatiza build, teste e publicação. *Transversal*
+- **GIGO** (Garbage In, Garbage Out): Se você dá entrada de baixa qualidade para a IA, a saída será igualmente ruim. *Transversal*
+- **Algoritmo Determinístico**: Função que sempre retorna o mesmo resultado para a mesma entrada. Ao contrário de LLMs. *Transversal*

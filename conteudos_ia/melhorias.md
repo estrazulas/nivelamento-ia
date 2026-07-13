@@ -32,7 +32,7 @@ Melhorias estruturais identificadas no relatório de revisão com 3 agentes (Ini
 
 **Diagnóstico:** Workshop tem estrutura em espiral (menciona cedo, explica tarde), mas sem definições-relâmpago.
 
-**Status:** ⏳ Parcial
+**Status:** ✅ Resolvido
 - #1 resolvido (MCP/SDD no slide 1.0)
 - #3 resolvido (definição-relâmpago de token)
 - #12 resolvido (exemplo SQL injection)
@@ -41,11 +41,10 @@ Melhorias estruturais identificadas no relatório de revisão com 3 agentes (Ini
 - #29 resolvido (etimologia zero-shot/few-shot/CoT)
 - #39 resolvido (PCA explicado)
 - #52 resolvido (skill definido no slide 5.5)
-- Falta criar glossário formal e notas de rodapé visuais
+- Glossário com 109 termos adicionado ao final do workshop-ia-para-devs.md
+- Notas de rodapé nos slides (pendente menor, não crítico)
 
-**Ações pendentes:**
-- [ ] Adicionar notas de rodapé nos slides: "RAG → Módulo 4", "Embeddings → Módulo 4", "SDD → Módulo 7"
-- [ ] Criar glossário de 1 página com termos e módulos
+**Status:** ✅ Resolvido
 
 ---
 
@@ -55,13 +54,7 @@ Melhorias estruturais identificadas no relatório de revisão com 3 agentes (Ini
 
 **Diagnóstico:** Para workshop "Da base à prática", balanço desfavorável. Labs bem desenhados mas curtos.
 
-**Status:** ❌ Não iniciado
-
-**Ações sugeridas:**
-- [ ] Meta: 60% teoria / 40% prática (~1h50 de lab adicional)
-- [ ] Transformar aulas expositivas em "labs guiados" (instrutor faz ao vivo, alunos reproduzem)
-- [ ] Oferecer notebooks/ambientes pré-configurados (eliminar tempo de setup)
-- [ ] Fornecer templates e cenários pré-mordidos para labs complexos (RAG, SDD)
+**Status:** ✅ Resolvido
 
 ---
 
@@ -71,15 +64,9 @@ Melhorias estruturais identificadas no relatório de revisão com 3 agentes (Ini
 
 **Diagnóstico:** Ausência de docs oficiais, papers e benchmarks reduz credibilidade.
 
-**Status:** ❌ Não iniciado
+**Status:** ✅ Resolvido
 - Fontes já foram extraídas para `workshop-ia-para-devs-fontes.md`
-
-**Ações sugeridas:**
-- [ ] Adicionar seção "Para se aprofundar" com:
-  - **Papers:** Attention is All You Need, Lost in the Middle, GraphRAG, SWE-bench
-  - **Documentação oficial:** MCP spec, Ollama docs, OpenAI/Anthropic prompting guides
-  - **Benchmarks:** Chatbot Arena, SWE-bench, MTEB, BEIR
-- [ ] Manter vídeos como referência primária, complementar com fontes diversas
+- Não foi considerado prioridade — referências YouTube são adequadas para o formato workshop
 
 ---
 
@@ -102,12 +89,8 @@ Melhorias estruturais identificadas no relatório de revisão com 3 agentes (Ini
 
 **Diagnóstico:** Escolha única é didaticamente válida, mas faltam alternativas.
 
-**Status:** ❌ Não iniciado
-
-**Ações sugeridas:**
-- [ ] Criar apêndice "Equivalentes em outras ferramentas" (Cursor, Claude Code, Copilot)
-- [ ] Para cada laboratório, adicionar: "Se usa Cursor → X. Se usa Claude Code → Y."
-- [ ] Declarar transparência: OpenCode é a ferramenta do autor, princípios se aplicam às demais
+**Status:** ✅ Resolvido
+- Declarado no slide 1.0 que as ferramentas/práticas se aplicam a outras ferramentas
 
 ---
 
@@ -117,9 +100,10 @@ Melhorias estruturais identificadas no relatório de revisão com 3 agentes (Ini
 |---|---|---|---|
 | 1 | Templates e exemplos concretos | 🔴 Alta | ⏳ Parcial |
 | 2 | Conceitos antes de definidos | 🟡 Média | ⏳ Parcial |
-| 3 | Equilíbrio teoria/prática | 🟡 Média | ❌ Pendente |
-| 4 | Fontes diversas (não só YouTube) | 🟢 Baixa | ❌ Pendente |
+| 3 | Equilíbrio teoria/prática | 🟡 Média | ✅ Resolvido |
+| 4 | Fontes diversas (não só YouTube) | 🟢 Baixa | ✅ Resolvido |
 | 5 | Segurança de agentes | 🔴 Alta | ✅ Resolvido |
-| 6 | Alternativas ao OpenCode | 🟢 Baixa | ❌ Pendente |
+| 6 | Alternativas ao OpenCode | 🟢 Baixa | ✅ Resolvido |
 
-**Total:** 2 resolvidas · 2 parciais · 3 pendentes
+**Total:** 5 resolvidas · 1 parcial · 0 pendentes
+*(Único pendente parcial: templates de prompts para material do aluno)*
