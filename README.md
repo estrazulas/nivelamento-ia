@@ -42,8 +42,7 @@ Todo o material didático, códigos e projetos práticos são disponibilizados s
 | --- | --- |
 | [workshop-ia-para-devs.md](plano_topicos/workshop-ia-para-devs.md) | Conteudo programatico completo do workshop, modulos 1 a 7, com topicos, laboratorios e glossario com 109 termos. |
 | [roteiro-apresentacao.md](plano_topicos/roteiro-apresentacao.md) | Roteiro linha a linha do instrutor com falas, analogias e transicoes entre slides. |
-| [modelo_apresentacao.md](plano_topicos/modelo_apresentacao.md) | Especificacao visual dos slides: grid, dimensoes, cores, tipografia e checklist de exportacao. |
-| [material-didatico-parte1.md](plano_topicos/material-didatico-parte1.md) | Material do aluno (Modulos 1-4): explicacoes, exemplos, referencias e laboratorios. |
+| [material-didatico-parte1.md](plano_topicos/material-didatico-parte1.md) | Material complementar do curso (Modulos 1-4): explicacoes, exemplos, referencias e laboratorios. |
 | [material-didatico-parte1.pdf](plano_topicos/material-didatico-parte1.pdf) | Versao PDF do material do aluno (Modulos 1-4), com imagens e links preservados. |
 
 ## Projetos Práticos Desenvolvidos
