@@ -1,6 +1,26 @@
-# Capacitacao IA para Devs
+# Capacitação DSI — Aprimoramento em Desenvolvimento Auxiliado por IA
 
-Workshop de IA para desenvolvimento de software, 16 horas, 2 dias, 7 modulos.
+> **Nome oficial:** REI-DTIC-DSI CURSO DE APRIMORAMENTO EM DESENVOLVIMENTO AUXILIADO POR INTELIGÊNCIA ARTIFICIAL ORIENTADO À SPEC DRIVEN DEVELOPMENT - SDD
+
+**Instituição:** Instituto Federal de Santa Catarina (IFSC) — Reitoria  
+**Departamento:** DSI — Departamento de Sistemas de Informação  
+**Coordenação:** Gilberto José de Souza Coutinho (gilberto.coutinho@ifsc.edu.br)  
+**Carga horária:** 16 horas (7 módulos)  
+**Período:** Agosto a Setembro de 2026  
+**Licença:** MIT
+
+## Instrutores
+
+| Nome | Cargo | E-mail |
+|------|-------|--------|
+| Daniel Severo Estrázulas | Analista de Tecnologia da Informação | daniel.estrazulas@ifsc.edu.br |
+| Samuel Bristot Loli | Analista de Tecnologia da Informação | samuel.bristot@ifsc.edu.br |
+
+## Sobre a Capacitação
+
+Esta capacitação foi desenvolvida pela DSI/IFSC para nivelar as equipes dos departamentos de sistemas dos institutos federais no uso de Inteligência Artificial para desenvolvimento de software. O curso aborda desde os fundamentos de LLMs até técnicas avançadas como RAG, MCP, agentes de IA e Spec-Driven Development (SDD).
+
+Todo o material didático, códigos e projetos práticos são disponibilizados sob licença aberta, permitindo reutilização e adaptação por outras instituições.
 
 ## Estrutura da Capacitação
 
