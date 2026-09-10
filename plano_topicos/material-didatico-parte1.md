@@ -1,6 +1,6 @@
 # Capacitação DSI — Aprimoramento em Desenvolvimento Auxiliado por LLM
 
-> Material do aluno — Módulos 1 a 4. Ministrado pelo professor Daniel Severo Estrázulas, DSI - Departamento de Sistemas de Informação do Instituto Federal de Santa Catarina (daniel.estrazulas@ifsc.edu.br). Carga horária de 16 horas, sendo 8 horas nesta parte. Módulos 1 e 2 em 13/08/2026; Módulos 3 e 4 em 21/08/2026.
+> Material complementar do curso ministrado pelo instrutor Daniel Severo Estrázulas, DSI - Departamento de Sistemas de Informação do Instituto Federal de Santa Catarina (daniel.estrazulas@ifsc.edu.br). Carga horária de 16 horas, sendo 8 horas nesta parte — Módulos 1 e 2 em 13/08/2026; Módulos 3 e 4 em 21/08/2026.
 
 ---
 
