@@ -16,7 +16,7 @@ Workshop de IA para desenvolvimento de software, 16 horas, 2 dias, 7 modulos.
 
 > **Totais:** ~16h (7 módulos) · ~8h teoria · ~4h30 laboratórios práticos
 
-## Materiais Desenvolvidos
+## Materiais Didáticos
 
 | Arquivo / Pasta | Resumo |
 | --- | --- |
