@@ -16,7 +16,7 @@ Workshop de IA para desenvolvimento de software, 16 horas, 2 dias, 7 modulos.
 
 > **Totais:** ~16h (7 módulos) · ~8h teoria · ~4h30 laboratórios práticos
 
-## plano_topicos
+## Materiais Desenvolvidos
 
 | Arquivo / Pasta | Resumo |
 | --- | --- |
@@ -25,7 +25,18 @@ Workshop de IA para desenvolvimento de software, 16 horas, 2 dias, 7 modulos.
 | [modelo_apresentacao.md](plano_topicos/modelo_apresentacao.md) | Especificacao visual dos slides: grid, dimensoes, cores, tipografia e checklist de exportacao. |
 | [material-didatico-parte1.md](plano_topicos/material-didatico-parte1.md) | Material do aluno (Modulos 1-4): explicacoes, exemplos, referencias e laboratorios. |
 | [material-didatico-parte1.pdf](plano_topicos/material-didatico-parte1.pdf) | Versao PDF do material do aluno (Modulos 1-4), com imagens e links preservados. |
-| [labs/](plano_topicos/labs/) | Estrutura dos 7 laboratorios praticos ([lab-01](plano_topicos/labs/lab-01-fundamentos), [lab-02](plano_topicos/labs/lab-02-modelos-ecossistema), [lab-03](plano_topicos/labs/lab-03-prompt-engineering), [lab-04](plano_topicos/labs/lab-04-rag-embeddings), [lab-05](plano_topicos/labs/lab-05-mcp-agentes), [lab-06](plano_topicos/labs/lab-06-arquitetura-contexto), [lab-07](plano_topicos/labs/lab-07-final-sdd)). |
+
+## Projetos Práticos Desenvolvidos
+
+| Laboratório | Resumo |
+| --- | --- |
+| [lab-01-fundamentos](plano_topicos/labs/lab-01-fundamentos) | Diagnosticar e mitigar limitações de LLMs (data de corte, alucinações). |
+| [lab-02-modelos-ecossistema](plano_topicos/labs/lab-02-modelos-ecossistema) | Comparar modelos e tomar decisões (classificação, geração de código, raciocínio complexo). |
+| [lab-03-prompt-engineering](plano_topicos/labs/lab-03-prompt-engineering) | Oficina de prompts com frameworks RTF/CARE/RISE em 3 cenários reais. |
+| [lab-04-rag-embeddings](plano_topicos/labs/lab-04-rag-embeddings) | Pipeline RAG, embeddings, Graph RAG e projetos demo (vetores e LangGraph). |
+| [lab-05-mcp-agentes](plano_topicos/labs/lab-05-mcp-agentes) | Configurar MCP Server e entender arquitetura de agentes. |
+| [lab-06-arquitetura-contexto](plano_topicos/labs/lab-06-arquitetura-contexto) | Criar Agents.md e skills modulares. |
+| [lab-07-final-sdd](plano_topicos/labs/lab-07-final-sdd) | Workshop prático completo com SDD (4 fases). |
 
 ## excalidraw
 
