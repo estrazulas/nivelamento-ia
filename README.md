@@ -38,7 +38,7 @@ Workshop de IA para desenvolvimento de software, 16 horas, 2 dias, 7 modulos.
 | [lab-06-arquitetura-contexto](plano_topicos/labs/lab-06-arquitetura-contexto) | Criar Agents.md e skills modulares. |
 | [lab-07-final-sdd](plano_topicos/labs/lab-07-final-sdd) | Workshop prático completo com SDD (4 fases). |
 
-## excalidraw
+## Apresentações
 
 > Para abrir os arquivos `.excalidraw`: [Excalidraw para VS Code](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor) · [excalidraw.com](https://excalidraw.com) (arraste o arquivo)
 
