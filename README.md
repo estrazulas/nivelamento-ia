@@ -4,7 +4,7 @@
 
 **Instituição:** Instituto Federal de Santa Catarina (IFSC) — Reitoria  
 **Departamento:** DSI — Departamento de Sistemas de Informação  
-**Coordenação:** Gilberto José de Souza Coutinho (gilberto.coutinho@ifsc.edu.br)  
+**Chefe do Departamento:** Gilberto José de Souza Coutinho (gilberto.coutinho@ifsc.edu.br)  
 **Carga horária:** 16 horas (7 módulos)  
 **Período:** Agosto a Setembro de 2026  
 **Licença:** MIT
