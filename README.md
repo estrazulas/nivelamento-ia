@@ -48,12 +48,19 @@ Todo o material didático, códigos e projetos práticos são disponibilizados s
 
 ## Projetos Práticos Desenvolvidos
 
+### Encontros 1 e 2 — Fundamentos (instrutor Daniel)
+
 | Laboratório | Resumo |
 | --- | --- |
 | [lab-01-fundamentos](plano_topicos/labs/lab-01-fundamentos) | Diagnosticar e mitigar limitações de LLMs (data de corte, alucinações). |
 | [lab-02-modelos-ecossistema](plano_topicos/labs/lab-02-modelos-ecossistema) | Comparar modelos e tomar decisões (classificação, geração de código, raciocínio complexo). |
 | [lab-03-prompt-engineering](plano_topicos/labs/lab-03-prompt-engineering) | Oficina de prompts com frameworks RTF/CARE/RISE em 3 cenários reais. |
 | [lab-04-rag-embeddings](plano_topicos/labs/lab-04-rag-embeddings) | Pipeline RAG, embeddings, Graph RAG e projetos demo (vetores e LangGraph). |
+
+### Encontros 3 e 4 — Ferramentas e prática (instrutor Samuel)
+
+| Laboratório | Resumo |
+| --- | --- |
 | [lab-05-mcp-agentes](plano_topicos/labs/lab-05-mcp-agentes) | Guia do módulo 5 no projeto de demonstração: os quatro servidores MCP, os chamados do GLPI simulado, o N+1 do chamado 1234 e os dois casos de injeção de instrução. |
 | [lab-06-arquitetura-contexto](plano_topicos/labs/lab-06-arquitetura-contexto) | Guia do módulo 6: o `AGENTS.md`, as duas skills e o `.mcp.json` — os quatro pilares, nos arquivos do projeto. |
 | [lab-07-final-sdd](plano_topicos/labs/lab-07-final-sdd) | Guia do módulo 7: as duas specs do Kiro, uma fase por branch, e os cinco achados de revisão com o comando que localiza cada um. |
