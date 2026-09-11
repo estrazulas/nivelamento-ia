@@ -1,4 +1,17 @@
-# Material de apoio dos encontros 3 e 4
+# Laboratórios práticos
+
+Guias por módulo, apontando onde cada assunto está nos materiais.
+
+## Encontros 1 e 2 — Fundamentos (instrutor Daniel)
+
+| Guia | O que cobre |
+| --- | --- |
+| [Lab 1 — Fundamentos de LLMs](lab-01-fundamentos/) | Diagnosticar e mitigar limitações de LLMs (data de corte, alucinações, sobrecarga de contexto) |
+| [Lab 2 — Modelos e ecossistema](lab-02-modelos-ecossistema/) | Comparar modelos e tomar decisões (classificação, geração de código, raciocínio complexo) |
+| [Lab 3 — Prompt Engineering](lab-03-prompt-engineering/) | Oficina de prompts com frameworks RTF/CARE/RISE em 3 cenários reais |
+| [Lab 4 — RAG e Embeddings](lab-04-rag-embeddings/) | Pipeline RAG, embeddings, Graph RAG e projetos demo (vetores e LangGraph) |
+
+## Encontros 3 e 4 — Ferramentas e prática (instrutor Samuel)
 
 O projeto de demonstração usado nos módulos 5, 6 e 7, e um guia por módulo
 apontando onde cada assunto está dentro dele.
@@ -8,8 +21,6 @@ apontando onde cada assunto está dentro dele.
 | [Lab 5 — MCP e agentes](lab-05-mcp-agentes/) | Os quatro servidores MCP, os chamados do GLPI simulado, o N+1 do chamado 1234 e os dois casos de injeção de instrução |
 | [Lab 6 — Arquitetura de contexto](lab-06-arquitetura-contexto/) | O `AGENTS.md`, as duas skills e o `.mcp.json` — os pilares, nos arquivos |
 | [Lab 7 — SDD na prática](lab-07-final-sdd/) | As duas specs do Kiro, uma fase por branch, e os cinco achados de revisão |
-
-Os labs 1 a 4 são dos encontros 1 e 2, com o outro instrutor.
 
 ## O repositório de demonstração
 
