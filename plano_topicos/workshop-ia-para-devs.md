@@ -29,21 +29,21 @@
 Dar a devs o que precisam pra usar IA generativa com segurança e produtividade no ciclo completo de desenvolvimento — entendendo os fundamentos técnicos, dominando as técnicas de interação e orquestrando agentes em projetos reais.
 
 ### Conteúdo Programático
-| Dia | Módulo | Tema | Duração | Laboratório |
+| Encontro | Módulo | Tema | Duração | Laboratório |
 | --- | --- | --- | --- | --- |
 | 1 | M1 — Como LLMs Funcionam de Verdade | Autocomplete, tokens, limitações, fine-tuning vs RAG | 2h | 30 min — Diagnosticar e mitigar limitações |
 | 1 | M2 — Ecossistema Open-Source e Execução Local | Ollama, Hugging Face, parâmetros, nuvem vs local | 1h30 | 30 min — Rodar modelo local vs API na nuvem |
-| 1 | M3 — Prompt Engineering na Prática | 5 elementos, RTF/CARE/RISE, Zero/Few-shot, CoT | 2h30 | 45 min — Oficina de prompts em 3 cenários reais |
-| 1 | M4 — RAG, Embeddings e Engenharia de Contexto | Pipeline RAG, embeddings, Graph RAG, progressive disclosure | 2h | 30 min — Visualizar embeddings e pipeline RAG |
-| 2 | M5 — MCP e Agentes de IA | Arquitetura MCP, agentes, loop de execução, MCP vs Skill vs API | 2h | 30 min — Configurar MCP Server no OpenCode |
-| 2 | M6 — Arquitetura de Contexto | Rules/Agents.md, Skills modulares, sub-agents, checklist dos 4 pilares | 2h | 35 min — Analisar super-agente + criar Agents.md e skill (onboarding) |
-| 2 | M7 — SDD e Ferramentas na Prática | 4 fases do SDD, STATE.md, frameworks (OpenSpec/TLC/Kiro), RPI, validação de código | 3h | 70 min — Workshop prático completo (Specify → Execute) |
+| 2 | M3 — Prompt Engineering na Prática | 5 elementos, RTF/CARE/RISE, Zero/Few-shot, CoT | 2h30 | 45 min — Oficina de prompts em 3 cenários reais |
+| 2 | M4 — RAG, Embeddings e Engenharia de Contexto | Pipeline RAG, embeddings, Graph RAG, progressive disclosure | 2h | 30 min — Visualizar embeddings e pipeline RAG |
+| 3 | M5 — MCP e Agentes de IA | Arquitetura MCP, agentes, loop de execução, segurança de MCP, MCP vs Skill vs API | 1h46 | Demos guiadas (23 min) — MCP do zero + Playwright · lab no kit pós-seminário |
+| 3 | M6 — Arquitetura de Contexto | Rules/Agents.md, Skills modulares, sub-agents, checklist dos 4 pilares | 1h49 | Demo guiada (12 min) — onboarding num legado real · lab no kit pós-seminário |
+| 4 | M7 — SDD e Ferramentas na Prática | 4 fases do SDD, STATE.md, frameworks (OpenSpec/TLC/Kiro), RPI, validação de código | 4h | Construção ao vivo (1h55) — Specify→Tasks · Execute real · Validar · Quando dá errado |
 
-> **Totais:** ~16h (7 módulos) · ~8h teoria · ~4h30 laboratórios práticos
-
+> **Totais:** 16h — **4 encontros de 4h (sextas-feiras), online** · 7 módulos
+> 
 ---
 
-## Dia 1 — Fundamentos e Técnicas (~8h)
+## Encontros 1 e 2 — Fundamentos e Técnicas (8h)
 
 ---
 
@@ -280,7 +280,7 @@ Sem embeddings, a IA trataria "automóvel" e "carro" como palavras diferentes.
 
 ---
 
-## Dia 2 — Ferramentas de Contexto e Prática (~8h)
+## Encontros 3 e 4 — Ferramentas de Contexto e Prática (8h)
 
 ---
 
@@ -291,6 +291,7 @@ Sem embeddings, a IA trataria "automóvel" e "carro" como palavras diferentes.
 - Identificar os 4 componentes de um agente de IA
 - Descrever o loop de execução de um agente e como ele difere de um chat
 - Configurar um MCP Server e ver o agente descobrindo ferramentas
+- Aplicar as práticas mínimas de segurança ao conectar um agente a sistemas corporativos
 **Tópicos:**
 
 #### 5.1 MCP: A Tomada Universal
@@ -337,7 +338,19 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 **Pra visualizar:** É o PDCA da qualidade, executado por IA em segundos em vez de humanos em semanas.
 
-#### 5.5 MCP vs Skill vs API Direta
+#### 5.5 Segurança de MCP
+**A ideia:** Conectar um agente a sistemas corporativos abre superfície nova. Quatro práticas cobrem a maior parte do risco:
+
+1. **Usuário read-only para MCP de banco.** Não é recomendação, é regra — o agente não precisa de `DELETE` pra responder uma pergunta.
+2. **Token em variável de ambiente, nunca no `.mcp.json` versionado.** O arquivo de config vai pro git; o segredo não.
+3. **Allowlist e modo de permissão.** Ferramenta de leitura libera; ferramenta de escrita pede confirmação; ferramenta destrutiva nem entra na config.
+4. **Prompt injection via resultado de ferramenta.** O que volta do MCP é *dado*, mas o modelo lê como *texto*. Se um usuário externo escrever instruções dentro de um chamado, comentário ou formulário, o agente pode obedecer.
+
+**Por que isso importa:** O item 4 é o menos conhecido e o mais perigoso. Qualquer sistema em que usuário externo escreve texto livre — chamado, formulário, comentário — virou superfície de ataque no momento em que um agente passou a ler aquele texto.
+
+**Pra visualizar:** O MCP é uma porta. Segurança de MCP é decidir quem tem a chave, o que dá pra levar pra fora e o que não pode entrar junto com a encomenda.
+
+#### 5.6 MCP vs Skill vs API Direta
 **A ideia:** Qual usar pra cada tipo de integração:
 
 - **MCP:** dados que MUDAM (status de tasks, páginas do Confluence, PRs). O protocolo gerencia autenticação. Ideal pra sistemas corporativos.
@@ -345,9 +358,14 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 - **API direta:** pra integrações pontuais ou quando não existe MCP Server. Mais trabalho, mais controle.
 **Por que isso importa:** Times que misturam esses conceitos acabam com MCPs pesados ou skills que deveriam ser MCPs. A regra: dado mutável → MCP; conhecimento estável → Skill; integração pontual → API direta.
 
-**Pra visualizar:** MCP = porta giratória pro mundo externo. Skill = manual na gaveta. API direta = construir uma porta nova.
+**Pra visualizar:** MCP = porta pro mundo externo (mesma imagem dos 4 pilares do Módulo 6). Skill = manual na gaveta. API direta = construir uma porta nova.
 
-**Laboratório (30 min):** Configurar um MCP Server simples (filesystem ou GitHub) no Claude Code. Observar o agente descobrindo ferramentas, usando a ferramenta certa e reportando o resultado. Discutir: o que aconteceu que você não fez manualmente?
+**Demos guiadas (23 min):** o instrutor executa, a plateia acompanha e pergunta.
+
+1. **Configurar um MCP do zero (15 min):** a mesma pergunta sobre versão de biblioteca antes e depois do Context7 — a diferença entre as duas respostas são 4 linhas de configuração, não um modelo melhor.
+2. **Playwright (8 min):** o agente abrindo o navegador, logando e verificando uma tela. É a demo mais fácil de entender por quem não é dev.
+
+**No kit do pós-seminário:** roteiro passo a passo para configurar Context7 + um segundo MCP à escolha, listar as ferramentas descobertas e inspecionar o schema de uma delas.
 
 ---
 
@@ -366,7 +384,7 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 1. **2023-2024 — "Tudo no prompt":** documentação, regras, MCPs, workflows num prompt só. Resultado: contexto gigante, tokens caros, alucinações.
 2. **Início de 2025 — Super-agentes:** agentes customizados de 3000+ linhas que faziam tudo. Problema: cada conversa já começava com metade do contexto ocupado.
 3. **Meados de 2025 em diante — Skills modulares:** capacidades pequenas, focadas, carregadas sob demanda (sub-agents genéricos).
-**Por que isso importa:** Se você tá começando agora, pode pular pra fase 3 direto. Não crie agentes enormes. Crie skills pequenas e modulares e use sug-agents que vão identificar as skills que precisam para trabalhar e dar o resultado ao agente / processo principal.
+**Por que isso importa:** Se você tá começando agora, pode pular pra fase 3 direto. Não crie agentes enormes. Crie skills pequenas e modulares e use sub-agents genéricos, que identificam as skills necessárias para trabalhar e devolvem o resultado ao agente / processo principal.
 
 **Pra visualizar:** Fase 1 = todos os ingredientes na panela de uma vez. Fase 2 = robô gigante que gasta metade da energia só pra ligar. Fase 3 = cada ferramenta na sua gaveta/compartimento, utiliza quando precisar.
 
@@ -404,7 +422,7 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 **Pra visualizar:** Skill = classe. MCP = API REST.
 
 #### 6.5 Sub-agents Genéricos: A Revolução Silenciosa
-**A ideia:** A novidade de 2025: você precisa mais criar sub-agents customizados para tudo. Ferramentas modernas (Cursor, Claude Code) têm agentes genéricos que:
+**A ideia:** A novidade de 2025: você **não** precisa mais criar sub-agents customizados para tudo. Ferramentas modernas (Cursor, Claude Code, Kiro) têm agentes genéricos que:
 
 - Detectam automaticamente quando paralelizar.
 - Iniciam processos isolados com contexto limpo.
@@ -432,15 +450,15 @@ Esse loop roda até o objetivo ser atingido ou um guardrail interromper.
 
 **Pra visualizar:** Canivete suíço que faz tudo mal vs kit de ferramentas especializadas.
 
-**Laboratório (35 min):**
+**Demo guiada (12 min):** rodar o comando de onboarding num **legado real e grande** (SIGAA) e ler a saída em voz alta — o que a IA acertou e, sobretudo, o que ela não tinha como saber: a regra de negócio, o motivo histórico de uma decisão, o módulo que ninguém mexe por medo. A conclusão é o ponto do módulo: ela entrega 80% em 3 minutos; os 20% que faltam são o trabalho.
 
-1. Analisar um "super-agente" hipotético de 3000 linhas e identificar o que deveria virar skills independentes.
-2. Escrever um Agents.md pra um projeto real dos participantes.
-3. Esboçar uma skill simples (ex.: "gerar changelog a partir de commits") com front matter e trigger.
+**Bloco de perguntas (20 min):** reservado no fim do encontro. Online as dúvidas se acumulam no chat em vez de interromperem — sem tempo reservado, nunca são respondidas.
+
+**No kit do pós-seminário:** gerar o Agents.md do próprio projeto e reduzi-lo a 200 linhas; escrever uma skill com front matter e ajustar a descrição até o trigger disparar sozinho.
 
 ---
 
-### Módulo 7 — SDD e Ferramentas na Prática (~3h)
+### Módulo 7 — SDD e Ferramentas na Prática (4h — encontro inteiro)
 **O que você vai aprender:**
 
 - Executar o ciclo SDD completo num cenário real
@@ -593,15 +611,27 @@ Quick:     /spec new --quick → fast-track: faz perguntas antes de gerar o plan
 
 **Ferramentas relacionadas:** CodeRabbit, GitHub Code Review, Claude/ChatGPT/Copilot (como revisor), JUnit, Selenium, Spring Boot Test
 
-**Laboratório — Workshop Prático Final (70 min):**
+**Construção ao vivo (1h55):** o encontro 4 é uma sessão de construção, não uma aula com laboratório. O instrutor constrói a feature inteira do zero — *matrícula de aprovados em chamada de vagas*, backend Spring Boot + tela Angular — narrando cada decisão, e a plateia acompanha e pergunta.
 
-Cada participante (ou dupla) recebe um requisito de funcionalidade e executa as 4 fases do SDD com IA:
+**Bloco 1 — Specify → Design → Tasks (40 min)**
 
-1. **Specify (15 min):** escrever spec com user stories, metas e fora de escopo.
-2. **Design (15 min):** esboçar arquitetura e decisões técnicas.
-3. **Tasks (15 min):** quebrar em 3-5 tasks com definition of done.
-4. **Execute (20 min):** simular execução com sub-agents (ferramenta à escolha).
-5. **Apresentação (5 min):** cada dupla apresenta o STATE.md final. Discussão coletiva.
+Do requisito em português corrido até as tasks revisadas. O momento central é **discordar da spec ao vivo**: a IA decide sozinha o que fica fora de escopo, e isso é uma decisão de produto. Editar aquilo na frente da plateia é a demonstração de que SDD serve para revisar cedo e barato.
+
+**Bloco 2 — Execute de verdade (40 min)**
+
+As tasks rodam de verdade, com a aplicação subindo ao final e uma matrícula em lote sendo disparada pela tela. O tempo de espera é usado para acompanhar o `tasks.md`, responder o chat e comentar os erros do agente em tempo real. O estágio pré-construído fica apenas como plano B.
+
+**Bloco 3 — Validar o código gerado (15 min)**
+
+Aplicar o fluxo de 5 passos no código que nasceu 20 minutos antes: testes, analisador estático (com uma correção feita ao vivo) e teste integrado.
+
+**Bloco 4 — Quando dá errado: recuperando um agente perdido (20 min)**
+
+Quatro falhas provocadas de propósito, com a recuperação de cada uma: contexto poluído (restaurar pelo `STATE.md`), task grande demais (quebrar em três), alucinação de API (apontar a documentação real via MCP) e loop (corrigir a premissa, não o código). É o bloco mais valioso para quem vai usar isso sozinho depois — todo tutorial mostra o caminho feliz.
+
+**Bloco de perguntas (15 min):** reservado no fim, com abertura para a plateia pedir experimentos ao vivo.
+
+**No kit do pós-seminário:** templates de `spec.md`, `design.md`, `tasks.md` e `STATE.md`; o repositório com as tags de cada estágio da construção; e requisitos de exemplo para quem não quiser usar um problema do próprio trabalho.
 
 ---
 

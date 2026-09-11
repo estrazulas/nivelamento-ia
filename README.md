@@ -41,9 +41,10 @@ Todo o material didático, códigos e projetos práticos são disponibilizados s
 | Arquivo / Pasta | Resumo |
 | --- | --- |
 | [workshop-ia-para-devs.md](plano_topicos/workshop-ia-para-devs.md) | Conteudo programatico completo do workshop, modulos 1 a 7, com topicos, laboratorios e glossario com 109 termos. |
-| [roteiro-apresentacao.md](plano_topicos/roteiro-apresentacao.md) | Roteiro linha a linha do instrutor com falas, analogias e transicoes entre slides. |
-| [material-didatico-parte1.md](plano_topicos/material-didatico-parte1.md) | Material complementar do curso (Modulos 1-4): explicacoes, exemplos, referencias e laboratorios. |
+| [material-didatico-parte1.md](plano_topicos/material-didatico-parte1.md) | Material do aluno (Modulos 1-4): explicacoes, exemplos, referencias e laboratorios. |
 | [material-didatico-parte1.pdf](plano_topicos/material-didatico-parte1.pdf) | Versao PDF do material do aluno (Modulos 1-4), com imagens e links preservados. |
+| [material-didatico-parte2.md](plano_topicos/material-didatico-parte2.md) | Material do aluno (Módulos 5-7): MCP e agentes, arquitetura de contexto e SDD na prática, com os slides de cada encontro. |
+| [material-didatico-parte2.pdf](plano_topicos/material-didatico-parte2.pdf) | Versao PDF do material do aluno (Modulos 5-7), com imagens e links preservados. |
 
 ## Projetos Práticos Desenvolvidos
 
@@ -53,9 +54,11 @@ Todo o material didático, códigos e projetos práticos são disponibilizados s
 | [lab-02-modelos-ecossistema](plano_topicos/labs/lab-02-modelos-ecossistema) | Comparar modelos e tomar decisões (classificação, geração de código, raciocínio complexo). |
 | [lab-03-prompt-engineering](plano_topicos/labs/lab-03-prompt-engineering) | Oficina de prompts com frameworks RTF/CARE/RISE em 3 cenários reais. |
 | [lab-04-rag-embeddings](plano_topicos/labs/lab-04-rag-embeddings) | Pipeline RAG, embeddings, Graph RAG e projetos demo (vetores e LangGraph). |
-| [lab-05-mcp-agentes](plano_topicos/labs/lab-05-mcp-agentes) | Configurar MCP Server e entender arquitetura de agentes. |
-| [lab-06-arquitetura-contexto](plano_topicos/labs/lab-06-arquitetura-contexto) | Criar Agents.md e skills modulares. |
-| [lab-07-final-sdd](plano_topicos/labs/lab-07-final-sdd) | Workshop prático completo com SDD (4 fases). |
+| [lab-05-mcp-agentes](plano_topicos/labs/lab-05-mcp-agentes) | Guia do módulo 5 no projeto de demonstração: os quatro servidores MCP, os chamados do GLPI simulado, o N+1 do chamado 1234 e os dois casos de injeção de instrução. |
+| [lab-06-arquitetura-contexto](plano_topicos/labs/lab-06-arquitetura-contexto) | Guia do módulo 6: o `AGENTS.md`, as duas skills e o `.mcp.json` — os quatro pilares, nos arquivos do projeto. |
+| [lab-07-final-sdd](plano_topicos/labs/lab-07-final-sdd) | Guia do módulo 7: as duas specs do Kiro, uma fase por branch, e os cinco achados de revisão com o comando que localiza cada um. |
+| [demo-ia](plano_topicos/labs/demo-ia) | Repositório de demonstração dos encontros 3 e 4, empacotado com o histórico git. Usado pelos labs 5 e 7 — ver [BRANCHES.md](plano_topicos/labs/demo-ia/BRANCHES.md). |
+| [EQUIVALENCIAS.md](plano_topicos/labs/EQUIVALENCIAS.md) | Tradução dos comandos e caminhos entre Claude Code, Kiro, Cursor e OpenCode. Usada pelos labs 5 a 7. |
 
 ## Apresentações
 
@@ -67,8 +70,7 @@ Todo o material didático, códigos e projetos práticos são disponibilizados s
 | [modulo-02-open-source.excalidraw](excalidraw/modulo-02-open-source.excalidraw) | Modelos locais com Ollama, comparacao nuvem vs local, SLMs, matriz de decisao. |
 | [modulo-03-prompt-engineering.excalidraw](excalidraw/modulo-03-prompt-engineering.excalidraw) | 5 elementos do prompt, frameworks RTF/CARE/RISE, tecnicas zero-shot, few-shot, chain of thought. |
 | [modulo-04-rag-embeddings.excalidraw](excalidraw/modulo-04-rag-embeddings.excalidraw) | Pipeline RAG, embeddings, chunking, buscas semantica e hibrida, PCA, graph RAG. |
-| [modulo-05-mcp-agentes.excalidraw](excalidraw/modulo-05-mcp-agentes.excalidraw) | MCP, agentes, ferramentas, seguranca, sub-agentes e skills. |
-| [modulo-06-arquitetura-contexto.excalidraw](excalidraw/modulo-06-arquitetura-contexto.excalidraw) | Arquitetura de contexto, STATE.md, evolucao de prompts ate skills, loope de agente. |
-| [modulo-07-sdd-ferramentas.excalidraw](excalidraw/modulo-07-sdd-ferramentas.excalidraw) | SDD, spec.md, design.md, tasks.md, ferramentas e avaliacao LLM-as-Judge. |
+| [encontro-3--m5-m6.excalidraw](excalidraw/encontro-3--m5-m6.excalidraw) | **12 slides, o encontro 3 inteiro.** M5: novo papel do desenvolvedor, para que serve um servidor MCP, o protocolo em diagrama, segurança, anatomia do agente, ciclo de execução. M6: os 4 pilares, AGENTS.md, skills, checklist, onde cada coisa mora. |
+| [encontro-4--m7-sdd-kiro.excalidraw](excalidraw/encontro-4--m7-sdd-kiro.excalidraw) | **15 slides, o encontro 4 inteiro.** Problema do prompt único, o que é SDD, a spec que envelhece, vocabulário do Kiro, onde cortar o spec, spec × harness, as quatro fases sobre o projeto real, revisão do código gerado e validação. |
 
 
