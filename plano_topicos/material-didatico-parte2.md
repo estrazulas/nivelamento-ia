@@ -1,6 +1,6 @@
 # Capacitação DSI — Aprimoramento em Desenvolvimento Auxiliado por LLM
 
-> Material complementar do curso ministrado pelo instrutor Samuel Bristot Loli, DSI - Departamento de Sistemas de Informação do Instituto Federal de Santa Catarina. Carga horária de 16 horas, sendo 8 horas nesta parte — Módulos 5 e 6 em <!-- TODO: data do encontro 3 -->; Módulo 7 em <!-- TODO: data do encontro 4 -->.
+> Material complementar do curso ministrado pelo instrutor Samuel Bristot Loli, DSI - Departamento de Sistemas de Informação do Instituto Federal de Santa Catarina. Carga horária de 16 horas, sendo 8 horas nesta parte — Módulos 5 e 6 em 28/08/2026; Módulo 7 em 04/09/2026.
 
 ---
 
